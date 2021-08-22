@@ -1,0 +1,199 @@
+panels:
+  towny-town-mayor:
+    perm: default
+    rows: 6
+    title: '&8Towny - Mayor Menu'
+    commands-on-open:
+    - open= towny-quick {Middle}
+    - open= towny-hotbar {Bottom}
+    commands-on-close:
+    - plot perm hud
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '0':
+        material: NAME_TAG
+        stack: 1
+        name: Rename Town
+        commands:
+        - msg= What would you like to name your town?
+        - cpc
+        player-input:
+        - town set name %cp-player-input%
+      '2':
+        material: NAME_TAG
+        stack: 1
+        name: Set Town Tag
+        commands:
+        - msg= What would you like to name your town?
+        - cpc
+        player-input:
+        - t new %cp-player-input%
+      '4':
+        material: NAME_TAG
+        stack: 1
+        name: Set Town Board
+        commands:
+        - msg= What would you like the message board to say?
+        - cpc
+        player-input:
+        - town set board %cp-player-input%
+      '6':
+        material: NAME_TAG
+        stack: 1
+        name: Set Title For A Resident
+        lore:
+        - Type the resident's username followed by the title you wish to give them.
+        commands:
+        - "msg= Type the username, a space, then the title you want to give them:"
+        - cpc
+        player-input:
+        - town set title %cp-player-input%
+      '8':
+        material: NAME_TAG
+        stack: 1
+        name: Set Surname For A Resident
+        lore:
+        - Type the resident's username followed by the surname you wish to give them
+        commands:
+        - "msg= Type the username, a space, then the surname you want to give them:"
+        - cpc
+        player-input:
+        - town set surname %cp-player-input%
+      '9':
+        material: DIAMOND
+        stack: 1
+        name: Set Town Taxes
+      '10':
+        material: DIAMOND_BLOCK
+        stack: 1
+        name: Set Town Tax Percentage Cap
+      '12':
+        material: GOLD_INGOT
+        stack: 1
+        name: Set Default Plot Price
+      '13':
+        material: GOLD_BLOCK
+        stack: 1
+        name: Set Plot Taxes
+      '14':
+        material: IRON_INGOT
+        stack: 1
+        name: Set Default Shop Plot Price
+      '15':
+        material: IRON_BLOCK
+        stack: 1
+        name: Set Shop Plot Taxes
+      '16':
+        material: COPPER_INGOT
+        name: Set Embassy Plot Price
+        stack: 1
+      '17':
+        material: COPPER_BLOCK
+        stack: 1
+        name: Set Embassy Plot Taxes
+      '27':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDYzOThkYzZmNGRiNDEwMjRkMTVmYzQyYTYyODZkZjM2MTc5Y2M4YzM1NjhjYTY2Y2FiZDYxM2JkYjc0NiJ9fX0=
+        stack: 1
+        name: Set Town Mayor
+        lore:
+        - This will change the town mayor from you to another person.
+        commands:
+        - msg= Who would you like to set as mayor?
+        - cpc
+        player-input:
+        - town set mayor %cp-player-input%
+      '29':
+        material: GOLDEN_SWORD
+        stack: 1
+        name: PVP
+        lore:
+        - 'Left click to turn on.'
+        - 'Right click to turn off.'
+        commands:
+        - left= town toggle pvp on
+        - right= town toggle pvp off
+      '31':
+        material: CAMPFIRE
+        stack: 1
+        name: Fire
+        lore:
+        - 'Left click to turn on.'
+        - 'Right click to turn off.'
+        commands:
+        - left= town toggle fire on
+        - right= town toggle fire off
+      '33':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzU0MzA1ODEzODI4MzIzY2FiMmVkYTQ4ZjY5MmIxMTI1NTZkODlkNGJjZWRkYTg0YjVjMmZlMzYxMWFiOCJ9fX0
+        name: Kick Resident
+        stack: 1
+      '34':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
+        name: Add Resident
+        stack: 1
+      '38':
+        material: CREEPER_HEAD
+        stack: 1
+        name: Mob Spawns
+        lore:
+        - 'Left click to turn on.'
+        - 'Right click to turn off.'
+        commands:
+        - left= town toggle mobs on
+        - right= town toggle mobs off
+      '40':
+        material: TNT
+        stack: 1
+        name: Explosions
+        lore:
+        - 'Left click to turn on.'
+        - 'Right click to turn off.'
+        commands:
+        - left= town toggle explosion on
+        - right= town toggle explosion off
+      '42':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzczYTExNTI4MzAyZjI1NDJkMTk2N2JmYzY3ZGFiM2FmNWQ1ZjFmNzZjMzYwZWI2N2I3MWIyYWU0YzNmN2IifX19
+        stack: 1
+        name: Remove Town Rank to Player
+        lore:
+        - 'Type the name of the player followed by the rank to remove.'
+        - 'Available ranks to remove are:'
+        - 'assistant'
+        - 'donator'
+        - 'helper'
+        - 'sheriff'
+        - 'vip'
+        commands:
+        - "msg= Type the name of the player, a space, and the rank to remove (assistant, donator, helper, sheriff, or vip)"
+        - cpc
+        player-input:
+        - town rank remove %cp-player-input%
+      '43':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2QyNWU0NjcxOWY5NjdiMzNjMjk3ZWQxNGE1MWJlOTRlZDY0YmJlZDM2MmFhYzkxYzc5ZjM5MDNlMWVhNDkxIn19fQ==
+        stack: 1
+        name: Add Town Rank to Player
+        lore:
+        - 'Type the name of the player followed by the rank to add.'
+        - 'Available ranks are:'
+        - 'assistant'
+        - 'donator'
+        - 'helper'
+        - 'sheriff'
+        - 'vip'
+        commands:
+        - "msg= Type the name of the player, a space, and the rank to add (assistant, donator, helper, sheriff, or vip)"
+        - cpc
+        player-input:
+        - town rank add %cp-player-input%
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Town Menu
+        commands:
+        - open= towny-town
+        - plot perm hud
+      '53':
+        material: COMPOSTER
+        stack: 1
+        name: Delete Town
+        commands:
+        - town delete

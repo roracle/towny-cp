@@ -1,0 +1,83 @@
+panels:
+  towny-quick:
+    perm: default
+    rows: 3
+    title: '&8Towny - Quick Menu'
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '0':
+        material: GOLD_INGOT
+        stack: 1
+        name: Town Bank
+        commands:
+        - open= towny-town-bank {Top}
+      '1':
+        material: GOLD_BLOCK
+        stack: 1
+        name: Nation Bank
+        commands:
+        - open= towny-nation-bank {Top}
+      '3':
+        material: RED_BANNER
+        banner: []
+        stack: 1
+        name: Unclaim
+        lore:
+        - Middle click to unclaim the plot you are standing in.
+        commands:
+        - middle= town unclaim
+      '4':
+        material: DAYLIGHT_DETECTOR
+        stack: 1
+        name: Plot Borders Toggle
+        lore:
+        - Middle click to toggle.
+        commands:
+        - middle= resident toggle plotborder
+      '5':
+        material: LIME_BANNER
+        banner: []
+        stack: 1
+        name: Claim This Plot
+        lore:
+        - Middle click to claim the plot you are standing in.
+        commands:
+        - town claim
+      '7':
+        material: LEATHER_BOOTS
+        stack: 1
+        name: Toggle Walk to Claim
+        lore:
+        - Middle Click to toggle this.
+        commands:
+        - middle= resident toggle townclaim
+      '8':
+        material: MAP
+        stack: 1
+        name: Map HUD
+        commands:
+        - towny map hud
+      '18':
+        material: BARRIER
+        stack: 1
+        name: Close Towny Menu
+        commands:
+        - "cpc"
+      '19':
+        material: COMPASS
+        stack: 1
+        name: Town Spawn
+        commands:
+        - t spawn
+      '25':
+        material: SPYGLASS
+        stack: 1
+        name: Admin Spy
+        commands:
+        - towny spy
+      '26':
+        material: COMMAND_BLOCK
+        stack: 1
+        name: Towny World Settings
+        commands:
+        - open= towny-world-admin {Top}

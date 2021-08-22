@@ -1,0 +1,113 @@
+panels:
+  towny-nation-king:
+    perm: default
+    rows: 6
+    title: '&8Towny - Nation Incumbant'
+    commands-on-open:
+    - open= towny-quick {Middle}
+    - open= towny-hotbar {Bottom}
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '0':
+        material: NAME_TAG
+        stack: 1
+        name: Rename Nation
+        commands:
+        - "msg= What would you like to name your nation?"
+        - "cpc"
+        player-input:
+        - "nation set name %cp-player-input%"
+      '1':
+        material: NAME_TAG
+        stack: 1
+        name: Set Nation Tag
+        commands:
+        - "msg= What tag would you like to give your nation?"
+        - "cpc"
+        player-input:
+        - "nation set tag %cp-player-input%"
+      '3':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Kick Town
+        commands:
+        - "msg= Which town would you like to kick?"
+        - "cpc"
+        player-input:
+        - "nation kick %cp-player-input%"
+      '4':
+        material: PURPLE_BANNER
+        banner: []
+        stack: 1
+        name: Ally Settings
+        #commands:
+        #- open= nation-ally-menu
+      '5':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Add Town
+        commands:
+        - "msg= Which town would you like to add?"
+        - "cpc"
+        player-input:
+        - "nation add %cp-player-input%"
+      '7':
+        material: PIGLIN_BANNER_PATTERN
+        stack: 1
+        name: Invites
+      '8':
+        material: PIGLIN_BANNER_PATTERN
+        stack: 1
+        name: List Worlds
+      '21':
+        material: GOLD_INGOT
+        stack: 1
+        name: Set Nation Tax
+      '23':
+        material: KELP
+        stack: 1
+        name: Neutrality
+      '25':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Set Player Title
+      '26':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Set Player Surname
+      '34':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Remove Nation Rank from Player
+      '35':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Add Nation Rank to Player
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Nation Menu
+        commands:
+        - open= towny-nation
+      '47':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Remove Enemy
+      '48':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Add Enemy
+      '50':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Change Nation Leader
+      '51':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Change Nation Capitol
+      '53':
+        material: COMPOSTER
+        stack: 1
+        name: Delete Nation
+        commands:
+        - nation delete

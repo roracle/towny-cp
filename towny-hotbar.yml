@@ -1,0 +1,97 @@
+panels:
+  towny-hotbar:
+    perm: default
+    rows: 3
+    title: '&8Towny Hotbar'
+    empty: BLACK_STAINED_GLASS_PANE
+    panelType:
+    - static
+    item:
+      '0':
+        material: cps= self
+        stack: 1
+        name: My Resident Menu
+        commands:
+        - open= towny-resident {Top}
+      '2':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDM0NjdhNTMxOTc4ZDBiOGZkMjRmNTYyODVjNzI3MzRkODRmNWVjODhlMGI0N2M0OTMyMzM2Mjk3OWIzMjNhZiJ9fX0=
+        stack: 1
+        name: Wilderness Info
+        commands:
+        - open= towny-world {Top}
+      '3':
+        material: GRASS_BLOCK
+        stack: 1
+        name: Plot Menu
+        commands:
+        - open= towny-plot {Top}
+      '4':
+        material: BLACK_STAINED_GLASS_PANE
+        stack: 1
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          material: STONE_BRICKS
+          stack: 1
+          name: Town Menu
+          commands:
+          - open= towny-town {Top}
+        hasvalue0:
+          compare: '%townyadvanced_has_town%'
+          value: false
+          material: COBBLESTONE
+          stack: 1
+          name: You must create or join a town first.
+          commands:
+          - open= towny-notown {Top}
+      '5':
+        material: BLACK_STAINED_GLASS_PANE
+        stack: 1
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          material: MOSSY_COBBLESTONE
+          stack: 1
+          name: Outpost Menu
+          commands:
+          - open= towny-outpost {Top}
+      '6':
+        material: BLACK_STAINED_GLASS_PANE
+        stack: 1
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          hasvalue:
+            compare: '%townyadvanced_has_nation%'
+            value: true
+            material: RAW_GOLD_BLOCK
+            stack: 1
+            name: Nation Menu
+            commands:
+            - open= towny-nation {Top}
+          hasvalue0:
+            compare: '%townyadvanced_has_nation%'
+            value: false
+            material: RAW_IRON_BLOCK
+            stack: 1
+            name: Your town must create or join a nation first.
+            commands:
+            - open= towny-nonation {Top}
+#          hasvalue1:
+#            compare: '%townyadvanced_has_nation%'
+#            value: false
+#            material: RAW_IRON_BLOCK
+#            stack: 1
+#            name: 'Your town must create or join a nation first.'
+#            commands:
+#            - open= towny-nonation
+      '8':
+        material: IRON_PICKAXE
+        stack: 1
+        name: Player
+        lore:
+        - You are a normal player.
+        #- Back to Player Menu

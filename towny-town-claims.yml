@@ -1,0 +1,75 @@
+panels:
+  towny-town-claims:
+    perm: default
+    rows: 6
+    title: '&8Towny - Bonus Land Claims'
+    commands-on-open:
+    - open= towny-quick {Middle}
+    - open= towny-hotbar {Bottom}
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '4':
+        material: GREEN_BANNER
+        banner: []
+        stack: 1
+        name: Get Bonus Land Claims
+        lore:
+        - 'These will give you more available blocks for claiming.'
+        - 'You will still have to claim the actual territory you want.'
+        - 'You cannot unpurchase bonus land claims!'
+      '12':
+        material: GRASS_BLOCK
+        stack: 1
+        name: ''
+      '14':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Buy 1 Claim
+        commands:
+        - town buy bonus 1
+      '21':
+        material: GRASS_BLOCK
+        stack: 8
+        name: ''
+      '23':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Buy 8 Claims
+        commands:
+        - town buy bonus 8
+      '30':
+        material: GRASS_BLOCK
+        stack: 16
+        name: ''
+      '32':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Buy 16 Claims
+        commands:
+        - town buy bonus 16
+      '39':
+        material: GRASS_BLOCK
+        stack: 32
+        name: ''
+      '41':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Buy 32 Claims
+        commands:
+        - town buy bonus 32
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Town Bank Menu
+        commands:
+        - open= towny-town-bank
+      '48':
+        material: GRASS_BLOCK
+        stack: 64
+        name: ''
+      '50':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Buy 64 Claims
+        commands:
+        - town buy bonus 64

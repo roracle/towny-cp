@@ -1,0 +1,114 @@
+panels:
+  towny-plot:
+    perm: default
+    rows: 6
+    title: '&8Towny - Plot Menu'
+    commands-on-open:
+    - open= towny-quick {Middle}
+    - open= towny-hotbar {Bottom}
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '0':
+        material: NAME_TAG
+        stack: 1
+        name: Plot Info
+        lore:
+        - Name: '%townyadvanced_player_location_plot_name%'
+        - Owner: '%townyadvanced_player_location_plot_owner_name%'
+      '4':
+        material: ACACIA_BUTTON
+        stack: 1
+        name: Reset Plot Type
+        commands:
+        - plot set reset
+      '8':
+        material: CRIMSON_SIGN
+        stack: 1
+        name: Not For Sale
+        #DO THIS LATER
+      '11':
+        material: GRASS_BLOCK
+        stack: 1
+        name: Wilds
+        commands:
+        - plot set wilds
+      '13':
+        material: DIAMOND
+        stack: 1
+        name: Shop
+        commands:
+        - plot set shop
+      '15':
+        material: GOLDEN_SWORD
+        stack: 1
+        name: Arena
+        commands:
+        - plot set arena
+      '21':
+        material: LIGHT_BLUE_BANNER
+        banner: []
+        stack: 1
+        name: Embassy
+        commands:
+        - plot set embassy
+      '23':
+        material: BLUE_BED
+        stack: 1
+        name: Inn
+        commands:
+        - plot set inn
+      '29':
+        material: IRON_BARS
+        stack: 1
+        name: Jail
+        commands:
+        - plot set jail
+      '31':
+        material: GOLD_INGOT
+        stack: 1
+        name: Bank
+        commands:
+        - plot set bank
+      '33':
+        material: FARMLAND
+        stack: 1
+        name: Farm
+        commands:
+        - plot set farm
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Resident Menu
+        commands:
+        - open= towny-resident
+      '47':
+        material: WOODEN_SWORD
+        name: 'PVP is disabled here.'
+        hasvalue:
+          compare: '%townyadvanced_player_location_pvp%'
+          value: (PVP)
+          material: GOLDEN_SWORD
+          stack: 1
+          name: 'PVP is enabled here.'
+      '48':
+        material: TNT
+        stack: 1
+        name: Explosions
+        #DO THIS LATER
+      '49':
+        material: CAMPFIRE
+        stack: 1
+        name: Fire
+        #DO THIS LATER
+      '50':
+        material: CREEPER_HEAD
+        stack: 1
+        name: Mob Spawns
+        #DO THIS LATER
+      '53':
+        material: COMMAND_BLOCK
+        stack: 1
+        name: Plot Permissions
+        commands:
+        - open= towny-plot-perms
+        - plot perm hud

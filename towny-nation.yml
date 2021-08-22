@@ -1,0 +1,83 @@
+panels:
+  towny-nation:
+    perm: default
+    rows: 6
+    title: '&8Towny - Nation Menu'
+    commands-on-open:
+    - open= towny-quick {Middle}
+    - open= towny-hotbar {Bottom}
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '0':
+        material: NAME_TAG
+        stack: 1
+        name: '%townyadvanced_nation_formatted%'
+        lore:
+        - 'Incumbent: %townyadvanced_nation_king%'
+        - 'Capital: %townyadvanced_nation_capital%'
+        - 'Map Color: %townyadvanced_nation_map_color_hex%'
+      '8':
+        material: PAPER
+        stack: 1
+        name: Nations Lists
+        lore:
+        - 'Get various list of all nations.'
+        commands:
+        - open= towny-nation-nationlists
+      '11':
+        material: GOLD_BLOCK
+        stack: 1
+        name: Nation Bank Balance
+        lore:
+        - '%townyadvanced_nation_balance%'
+      '13':
+        material: GOLD_INGOT
+        stack: 1
+        name: Nation Taxes
+        lore:
+        - '%townyadvanced_daily_nation_tax%'
+      '15':
+        material: GOLD_NUGGET
+        stack: 1
+        name: Nation Upkeep
+        lore:
+        - '%townyadvanced_daily_nation_upkeep%'
+      '30':
+        material: COMPASS
+        stack: 1
+        name: Nation Spawn
+        commands:
+        - nation spawn
+      '32':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWU0ODYxNWRmNmI3ZGRmM2FkNDk1MDQxODc2ZDkxNjliZGM5ODNhM2ZhNjlhMmFjYTEwN2U4ZjI1MWY3Njg3In19fQ==
+        stack: 1
+        name: Online Nation Players
+        commands:
+        - nation online
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Resident Menu
+        commands:
+        - open= towny-resident
+      '49':
+        material: BARRIER
+        name: 'error'
+        hasvalue:
+          compare: '%townyadvanced_is_nation_peaceful%'
+          value: "&bPeaceful"
+          material: WHITE_CANDLE
+          stack: 1
+          name: Your nation is at peace.
+        hasvalue0:
+          compare: '%townyadvanced_is_nation_peaceful%'
+          value: false
+          material: RED_CANDLE
+          stack: 1
+          name: Your nation is not at peace.
+      '53':
+        material: COMMAND_BLOCK
+        stack: 1
+        name: Nation Settings
+        commands:
+        - open= towny-nation-king

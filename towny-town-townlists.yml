@@ -1,0 +1,76 @@
+panels:
+  towny-town-townlists:
+    perm: default
+    rows: 6
+    title: '&8Towny - Town Lists'
+    commands-on-open:
+    - open= towny-quick {Middle}
+    - open= towny-hotbar {Bottom}
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '11':
+        material: MAP
+        stack: 1
+        name: List Towns by Founding Date
+        commands:
+        - town list by founded
+      '13':
+        material: MAP
+        stack: 1
+        name: List Towns by Name
+        commands:
+        - town list by name
+      '15':
+        material: MAP
+        stack: 1
+        name: List Towns by Residents
+        commands:
+        - town list by residents
+      '21':
+        material: MAP
+        stack: 1
+        name: List Towns by Bank Balance
+        commands:
+        - town list by balance
+      '23':
+        material: MAP
+        stack: 1
+        name: List Towns by Bankrupt Status
+        commands:
+        - town list by bankrupt
+      '29':
+        material: MAP
+        stack: 1
+        name: List Towns by Townblocks
+        commands:
+        - town list by townblocks
+      '31':
+        material: MAP
+        stack: 1
+        name: List Towns by Online Players
+        commands:
+        - town list by online
+      '33':
+        material: MAP
+        stack: 1
+        name: List Towns by Ruined Status
+        commands:
+        - town list by ruined
+      '39':
+        material: MAP
+        stack: 1
+        name: List Towns by Open Status
+        commands:
+        - town list by open
+      '41':
+        material: MAP
+        stack: 1
+        name: List Towns by Public Status
+        commands:
+        - town list by public
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Town Menu
+        commands:
+        - open= towny-town

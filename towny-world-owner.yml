@@ -1,0 +1,96 @@
+panels:
+  towny-world-owner:
+    perm: default
+    rows: 6
+    title: '&8Towny - World Owner Menu'
+    commands-on-open:
+    - open= towny-quick {Middle}
+    - open= towny-hotbar {Bottom}
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '0':
+        material: NAME_TAG
+        stack: 1
+        name: Set Wilderness Name
+      '1':
+        material: CREEPER_HEAD
+        stack: 1
+        name: Town Mobs
+      '2':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '4':
+        material: CREEPER_HEAD
+        stack: 1
+        name: World Mobs
+      '5':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '7':
+        material: CREEPER_HEAD
+        stack: 1
+        name: Wilderness Mobs
+      '8':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '19':
+        material: IRON_AXE
+        stack: 1
+        name: War
+      '20':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '22':
+        material: STONE
+        stack: 1
+        name: Plot Clear/Delete
+      '23':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '25':
+        material: DEEPSLATE
+        stack: 1
+        name: Unclaimed Blocks Delete
+      '26':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '37':
+        material: TNT_MINECART
+        stack: 1
+        name: Revert Wilderness On Block Explosion
+      '38':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '40':
+        material: CREEPER_HEAD
+        stack: 1
+        name: Revert Wild On Entity Explosion
+      '41':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '43':
+        material: CHEST_MINECART
+        stack: 1
+        name: Revert On Unclaim
+      '44':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back To Towny World Admin
+        commands:
+        - open= towny-world-admin
+      '53':
+        material: PIGLIN_BANNER_PATTERN
+        stack: 1
+        name: Towny Owner Info

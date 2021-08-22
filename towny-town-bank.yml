@@ -1,0 +1,109 @@
+panels:
+  towny-town-bank:
+    perm: default
+    rows: 6
+    title: '&8Towny - Town Bank'
+    commands-on-open:
+    - open= towny-quick {Middle}
+    - open= towny-hotbar {Bottom}
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '4':
+        material: BELL
+        stack: 1
+        name: Town Bank
+        lore:
+        - 'Balance:'
+        - '%townyadvanced_town_balance%'
+      '8':
+        material: GRASS_BLOCK
+        stack: 1
+        name: Purchase Bonus Land Claims
+        commands:
+        - open= towny-town-claims
+      '12':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: Withdraw 1
+        commands:
+        - town withdraw 1
+      '13':
+        material: GOLD_INGOT
+        stack: 1
+        name: ''
+      '14':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Deposit 1
+        commands:
+        - town deposit 1
+      '21':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: Withdraw 8
+        commands:
+        - town withdraw 8
+      '22':
+        material: GOLD_INGOT
+        stack: 8
+        name: ''
+      '23':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Deposit 8
+        commands:
+        - town deposit 8
+      '30':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: Withdraw 16
+        commands:
+        - town withdraw 16
+      '31':
+        material: GOLD_INGOT
+        stack: 16
+        name: ''
+      '32':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Deposit 16
+        commands:
+        - town deposit 16
+      '39':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: Withdraw 32
+        commands:
+        - town withdraw 32
+      '40':
+        material: GOLD_INGOT
+        stack: 32
+        name: ''
+      '41':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Deposit 32
+        commands:
+        - town deposit 32
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Town Menu
+        commands:
+        - open= towny-town
+      '48':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: Withdraw 64
+        commands:
+        - town withdraw 64
+      '49':
+        material: GOLD_INGOT
+        stack: 64
+        name: ''
+      '50':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Deposit 64
+        commands:
+        - town deposit 64

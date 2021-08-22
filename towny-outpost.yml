@@ -1,0 +1,33 @@
+panels:
+  towny-outpost:
+    perm: default
+    rows: 6
+    title: '&8Towny - Outpost Menu'
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '11':
+        material: MOSSY_COBBLESTONE
+        stack: 1
+        name: Outpost 1
+      '13':
+        material: MOSSY_COBBLESTONE
+        stack: 1
+        name: Outpost 2
+      '15':
+        material: MOSSY_COBBLESTONE
+        stack: 1
+        name: Outpost 3
+      '30':
+        material: MOSSY_COBBLESTONE
+        stack: 1
+        name: Outpost 4
+      '32':
+        material: MOSSY_COBBLESTONE
+        stack: 1
+        name: Outpost 5
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Resident Menu
+        commands:
+        - open= towny-resident

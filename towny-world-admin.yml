@@ -1,0 +1,99 @@
+panels:
+  towny-world-admin:
+    perm: default
+    rows: 6
+    title: '&8Towny - World Admin Menu'
+    commands-on-open:
+    - open= towny-quick {Middle}
+    - open= towny-hotbar {Bottom}
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '1':
+        material: LIME_BANNER
+        banner: []
+        stack: 1
+        name: Claimable
+      '2':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '4':
+        material: TNT
+        stack: 1
+        name: Explosions
+      '5':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '7':
+        material: FLINT_AND_STEEL
+        stack: 1
+        name: Force Explosions
+      '8':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '19':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Using Towny
+      '20':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '22':
+        material: GOLDEN_SWORD
+        stack: 1
+        name: PVP
+      '23':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '25':
+        material: NETHERITE_SWORD
+        stack: 1
+        name: Force PVP
+      '26':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '37':
+        material: TIPPED_ARROW
+        stack: 1
+        name: Friendly Fire
+      '38':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '40':
+        material: CAMPFIRE
+        stack: 1
+        name: Fire
+      '41':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '43':
+        material: SOUL_CAMPFIRE
+        stack: 1
+        name: Force Fire
+      '44':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: ''
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back To Towny World Menu
+        commands:
+        - open= towny-world
+      '52':
+        material: COMMAND_BLOCK
+        stack: 1
+        name: Owner Toggles
+        commands:
+        - open= towny-world-owner
+      '53':
+        material: PIGLIN_BANNER_PATTERN
+        stack: 1
+        name: Towny Admin Info

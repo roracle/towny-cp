@@ -1,0 +1,67 @@
+panels:
+  towny-nation-nationlists:
+    perm: default
+    rows: 6
+    title: '&8Towny - Nation Lists'
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '10':
+        material: MAP
+        stack: 1
+        name: List Nation by Name
+        commands:
+        - nation list by name
+      '12':
+        material: MAP
+        stack: 1
+        name: List Nations by Residents
+        commands:
+        - nation list by resident
+      '14':
+        material: MAP
+        stack: 1
+        name: List Nations by Bank Balance
+        commands:
+        - nation list by balance
+      '16':
+        material: MAP
+        stack: 1
+        name: List Nation by Online
+        commands:
+        - nation list by online
+      '27':
+        material: MAP
+        stack: 1
+        name: List Nations by Towns
+        commands:
+        - nation list by towns
+      '29':
+        material: MAP
+        stack: 1
+        name: List Nations by Townblocks
+        commands:
+        - nation list by townblocks
+      '31':
+        material: MAP
+        stack: 1
+        name: List Nation by Open Invites
+        commands:
+        - nation list by open
+      '33':
+        material: MAP
+        stack: 1
+        name: List Nations with Public Spawns
+        commands:
+        - nation list by public
+      '35':
+        material: MAP
+        stack: 1
+        name: List Nations by Founded Date
+        commands:
+        - nation list by founded
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Nation Menu
+        commands:
+        - open= towny-nation

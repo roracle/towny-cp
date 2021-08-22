@@ -1,0 +1,99 @@
+panels:
+  towny-town:
+    perm: default
+    rows: 6
+    title: '&8Towny - Town Menu'
+    commands-on-open:
+    - open= towny-quick {Middle}
+    - open= towny-hotbar {Bottom}
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '0':
+        material: NAME_TAG
+        stack: 1
+        name: '%townyadvanced_town_formatted%'
+        lore:
+        - Click to see town information and permissions.
+        commands:
+        - town
+      '7':
+        material: PAPER
+        stack: 1
+        name: Resident List
+        commands:
+        - town reslist
+      '8':
+        material: PAPER
+        stack: 1
+        name: Towns Lists
+        commands:
+        - open= towny-town-townlists {Top}
+      '10':
+        material: OAK_DOOR
+        stack: 1
+        name: Public Spawning
+      '12':
+        material: GOLD_INGOT
+        stack: 1
+        name: Town Bank Balance
+        lore:
+        - '%townyadvanced_town_balance%'
+      '14':
+        material: GOLD_NUGGET
+        stack: 1
+        name: Town Tax Rate
+        lore:
+        - '%townyadvanced_daily_town_tax%'
+      '16':
+        material: IRON_NUGGET
+        stack: 1
+        name: Town Upkeep
+        lore:
+        - '%townyadvanced_daily_town_upkeep%'
+      '27':
+        material: MAP
+        stack: 1
+        name: Accepting Invites
+      '29':
+        material: GOLDEN_SWORD
+        stack: 1
+        name: PVP
+      '31':
+        material: CREEPER_HEAD
+        stack: 1
+        name: Mob Spawns
+      '33':
+        material: CAMPFIRE
+        stack: 1
+        name: Fire
+      '35':
+        material: TNT
+        stack: 1
+        name: Explosions
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Resident Menu
+        commands:
+        - open= towny-resident
+      '49':
+        material: DAYLIGHT_DETECTOR
+        stack: 1
+        name: Town Size
+        lore:
+        - '%townyadvanced_town_townblocks_used%/%townyadvanced_town_townblocks_maximum%'
+      '52':
+        material: PAPER
+        stack: 1
+        name: Mayor Menu
+        lore: 'testing 123 PIGLIN'
+        commands:
+        - open= towny-town-mayor {Top}
+        - plot perm hud
+      '53':
+        material: COMMAND_BLOCK
+        stack: 1
+        name: Town Permissions
+        commands:
+        - open= towny-town-perms
+        - plot perm hud

@@ -1,0 +1,103 @@
+panels:
+  towny-nation-bank:
+    perm: default
+    rows: 6
+    title: '&8Towny - Nation Bank'
+    commands-on-open:
+    - open= towny-quick {Middle}
+    - open= towny-hotbar {Bottom}
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '4':
+        material: BELL
+        stack: 1
+        name: Nation Bank
+        lore:
+        - 'Current balance:'
+        - '%townyadvanced_nation_balance%'
+      '12':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: Withdraw 1
+        commands:
+        - nation withdraw 1
+      '13':
+        material: GOLD_BLOCK
+        stack: 1
+        name: ''
+      '14':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Deposit 1
+        commands:
+        - nation deposit 1
+      '21':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: Withdraw 8
+        commands:
+        - nation withdraw 8
+      '22':
+        material: GOLD_BLOCK
+        stack: 8
+        name: ''
+      '23':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Deposit 8
+        commands:
+        - nation deposit 8
+      '30':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: Withdraw 16
+        commands:
+        - nation withdraw 16
+      '31':
+        material: GOLD_BLOCK
+        stack: 16
+        name: ''
+      '32':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Deposit 16
+        commands:
+        - nation deposit 16
+      '39':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: Withdraw 32
+        commands:
+        - nation withdraw 32
+      '40':
+        material: GOLD_BLOCK
+        stack: 32
+        name: ''
+      '41':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Deposit 32
+        commands:
+        - nation deposit 32
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Nation Menu
+        commands:
+        - open= towny-nation
+      '48':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: Withdraw 64
+        commands:
+        - nation withdraw 64
+      '49':
+        material: GOLD_BLOCK
+        stack: 64
+        name: ''
+      '50':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Deposit 64
+        commands:
+        - nation deposit 64
