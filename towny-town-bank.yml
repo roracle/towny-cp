@@ -14,6 +14,38 @@ panels:
         name: Town Bank History
         commands:
         - town bankhistory
+      '19':
+        material: DIAMOND
+        stack: 1
+        name: Set Town Taxes
+      '20':
+        material: DIAMOND_BLOCK
+        stack: 1
+        name: Set Town Tax Percentage Cap
+      '24':
+        material: IRON_INGOT
+        stack: 1
+        name: Set Default Plot Price
+      '25':
+        material: IRON_BLOCK
+        stack: 1
+        name: Set Plot Taxes
+      '33':
+        material: GOLD_INGOT
+        stack: 1
+        name: Set Default Shop Plot Price
+      '34':
+        material: GOLD_BLOCK
+        stack: 1
+        name: Set Shop Plot Taxes
+      '28':
+        material: COPPER_INGOT
+        name: Set Embassy Plot Price
+        stack: 1
+      '29':
+        material: COPPER_BLOCK
+        stack: 1
+        name: Set Embassy Plot Taxes
       '4':
         material: BELL
         stack: 1
@@ -27,139 +59,114 @@ panels:
         name: Purchase Bonus Land Claims
         commands:
         - open= towny-town-claims
-      '12':
-        material: BLACK_STAINED_GLASS_PANE
-        stack: 1
-        name: '&f'
-        hasperm:
-          perm: towny.command.town.withdraw
-          material: RED_STAINED_GLASS_PANE
-          stack: 1
-          name: Withdraw 1
-          commands:
-          - town withdraw 1
       '13':
         material: GOLD_INGOT
         stack: 1
         name: ''
-      '14':
-        material: BLACK_STAINED_GLASS_PANE
-        stack: 1
-        name: '&f'
+        lore:
+        - 'You are not allowed'
+        - 'to deposit or withdraw.'
         hasperm:
           perm: towny.command.town.deposit
-          material: LIME_STAINED_GLASS_PANE
+          material: GOLD_INGOT
           stack: 1
-          name: Deposit 1
+          name: Deposit/Withdraw 1
+          lore:
+          - 'Left Click:'
+          - 'Deposit'
+          - ''
+          - 'Right Click:'
+          - 'Withdraw'
           commands:
-          - town deposit 1
-      '21':
-        material: BLACK_STAINED_GLASS_PANE
-        stack: 1
-        name: '&f'
-        hasperm:
-          perm: towny.command.town.withdraw
-          material: RED_STAINED_GLASS_PANE
-          stack: 1
-          name: Withdraw 8
-          commands:
-          - town withdraw 8
+          - left= town deposit 1
+          - right= town withdraw 1
       '22':
         material: GOLD_INGOT
         stack: 8
         name: ''
-      '23':
-        material: BLACK_STAINED_GLASS_PANE
-        stack: 1
-        name: '&f'
+        lore:
+        - 'You are not allowed'
+        - 'to deposit or withdraw.'
         hasperm:
           perm: towny.command.town.deposit
-          material: LIME_STAINED_GLASS_PANE
-          stack: 1
-          name: Deposit 8
+          material: GOLD_INGOT
+          stack: 8
+          name: Deposit/Withdraw 8
+          lore:
+          - 'Left Click:'
+          - 'Deposit'
+          - ''
+          - 'Right Click:'
+          - 'Withdraw'
           commands:
-          - town deposit 8
-      '30':
-        material: BLACK_STAINED_GLASS_PANE
-        stack: 1
-        name: '&f'
-        hasperm:
-          perm: towny.command.town.withdraw
-          material: RED_STAINED_GLASS_PANE
-          stack: 1
-          name: Withdraw 16
-          commands:
-          - town withdraw 16
+          - left= town deposit 8
+          - right= town withdraw 8
       '31':
         material: GOLD_INGOT
         stack: 16
         name: ''
-      '32':
-        material: BLACK_STAINED_GLASS_PANE
-        stack: 1
-        name: '&f'
+        lore:
+        - 'You are not allowed'
+        - 'to deposit or withdraw.'
         hasperm:
           perm: towny.command.town.deposit
-          material: LIME_STAINED_GLASS_PANE
-          stack: 1
-          name: Deposit 16
+          material: GOLD_INGOT
+          stack: 16
+          name: Deposit/Withdraw 16
+          lore:
+          - 'Left Click:'
+          - 'Deposit'
+          - ''
+          - 'Right Click:'
+          - 'Withdraw'
           commands:
-          - town deposit 16
-      '39':
-        material: BLACK_STAINED_GLASS_PANE
-        stack: 1
-        name: '&f'
-        hasperm:
-          perm: towny.command.town.withdraw
-          material: RED_STAINED_GLASS_PANE
-          stack: 1
-          name: Withdraw 32
-          commands:
-          - town withdraw 32
+          - left= town deposit 16
+          - right= town withdraw 16
       '40':
         material: GOLD_INGOT
         stack: 32
         name: ''
-      '41':
-        material: BLACK_STAINED_GLASS_PANE
-        stack: 1
-        name: '&f'
+        lore:
+        - 'You are not allowed'
+        - 'to deposit or withdraw.'
         hasperm:
           perm: towny.command.town.deposit
-          material: LIME_STAINED_GLASS_PANE
-          stack: 1
-          name: Deposit 32
+          material: GOLD_INGOT
+          stack: 32
+          name: Deposit/Withdraw 32
+          lore:
+          - 'Left Click:'
+          - 'Deposit'
+          - ''
+          - 'Right Click:'
+          - 'Withdraw'
           commands:
-          - town deposit 32
+          - left= town deposit 32
+          - right= town withdraw 32
+      '49':
+        material: GOLD_INGOT
+        stack: 64
+        name: ''
+        lore:
+        - 'You are not allowed'
+        - 'to deposit or withdraw.'
+        hasperm:
+          perm: towny.command.town.deposit
+          material: GOLD_INGOT
+          stack: 64
+          name: Deposit/Withdraw 64
+          lore:
+          - 'Left Click:'
+          - 'Deposit'
+          - ''
+          - 'Right Click:'
+          - 'Withdraw'
+          commands:
+          - left= town deposit 64
+          - right= town withdraw 64
       '45':
         material: BARRIER
         stack: 1
         name: Back to Town Menu
         commands:
         - open= towny-town
-      '48':
-        material: BLACK_STAINED_GLASS_PANE
-        stack: 1
-        name: '&f'
-        hasperm:
-          perm: towny.command.town.withdraw
-          material: RED_STAINED_GLASS_PANE
-          stack: 1
-          name: Withdraw 64
-          commands:
-          - town withdraw 64
-      '49':
-        material: GOLD_INGOT
-        stack: 64
-        name: ''
-      '50':
-        material: BLACK_STAINED_GLASS_PANE
-        stack: 1
-        name: '&f'
-        hasperm:
-          perm: towny.command.town.deposit
-          material: LIME_STAINED_GLASS_PANE
-          stack: 1
-          name: Deposit 64
-          commands:
-          - town deposit 64
