@@ -12,18 +12,21 @@ panels:
         stack: 1
         name: My Resident Menu
         commands:
+        - cpc
         - open= towny-resident {Top}
       '2':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDM0NjdhNTMxOTc4ZDBiOGZkMjRmNTYyODVjNzI3MzRkODRmNWVjODhlMGI0N2M0OTMyMzM2Mjk3OWIzMjNhZiJ9fX0=
         stack: 1
         name: Wilderness Info
         commands:
+        - cpc
         - open= towny-world {Top}
       '3':
-        material: GRASS_BLOCK
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTBmZmUyZmY1ODdhNDlhMjY3N2NjZmYyNWE4MWFmZTA0ZjU0ZTFhMWUxN2YwYjE1ODEzODRhMmU2NGZlNiJ9fX0=
         stack: 1
         name: Plot Menu
         commands:
+        - cpc
         - open= towny-plot {Top}
       '4':
         material: BLACK_STAINED_GLASS_PANE
@@ -32,18 +35,20 @@ panels:
         hasvalue:
           compare: '%townyadvanced_has_town%'
           value: true
-          material: STONE_BRICKS
+          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmZiM2EwZTVkZWE5MTVhMjI0Zjg2YzUyOGQ0MTRlYzBmMWRiNmY0N2NkYjk3MTg3NzVhZDNhOTM0MThmZTI0In19fQ==
           stack: 1
           name: Town Menu
           commands:
+          - cpc
           - open= towny-town {Top}
         hasvalue0:
           compare: '%townyadvanced_has_town%'
           value: false
-          material: COBBLESTONE
+          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTk1NTM0ZTAyYzU5YjMzZWNlNTYxOTI4MDMzMTk3OTc3N2UwMjVmYTVmYTgxYWU3NWU5OWZkOGVmZGViYjgifX19
           stack: 1
           name: You must create or join a town first.
           commands:
+          - cpc
           - open= towny-notown {Top}
       '5':
         material: BLACK_STAINED_GLASS_PANE
@@ -52,11 +57,12 @@ panels:
         hasvalue:
           compare: '%townyadvanced_has_town%'
           value: true
-          material: MOSSY_COBBLESTONE
+          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjQ1NTlkNzU0NjRiMmU0MGE1MThlNGRlOGU2Y2YzMDg1ZjBhM2NhMGIxYjcwMTI2MTRjNGNkOTZmZWQ2MDM3OCJ9fX0=
           stack: 1
           name: Outpost Menu
           commands:
-          - open= towny-outpost {Top}
+          - cpc
+          - open= towny-town-outpost {Top}
       '6':
         material: BLACK_STAINED_GLASS_PANE
         stack: 1
@@ -67,27 +73,21 @@ panels:
           hasvalue:
             compare: '%townyadvanced_has_nation%'
             value: true
-            material: RAW_GOLD_BLOCK
+            material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDU1ODdkYTdmZTczMzZlOGFiOWY3OTFlYTVlMmNmYzhhODI3Y2E5NTk1NjdlYjlkNTNhNjQ3YmFiZjk0OGQ1In19fQ==
             stack: 1
             name: Nation Menu
             commands:
+            - cpc
             - open= towny-nation {Top}
           hasvalue0:
             compare: '%townyadvanced_has_nation%'
             value: false
-            material: RAW_IRON_BLOCK
+            material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTg3MzlmNjA5OWE3YzA0NTZmZGI0Mzc4MjRiYWE1ZjIyZDVjODUyY2NhZWEyOTdiMTE3N2U4OTNjNDcxY2Q1OCJ9fX0=
             stack: 1
             name: Your town must create or join a nation first.
             commands:
+            - cpc
             - open= towny-nonation {Top}
-#          hasvalue1:
-#            compare: '%townyadvanced_has_nation%'
-#            value: false
-#            material: RAW_IRON_BLOCK
-#            stack: 1
-#            name: 'Your town must create or join a nation first.'
-#            commands:
-#            - open= towny-nonation
       '8':
         material: IRON_PICKAXE
         stack: 1

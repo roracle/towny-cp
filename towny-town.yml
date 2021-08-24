@@ -16,84 +16,116 @@ panels:
         - Click to see town information and permissions.
         commands:
         - town
-      '7':
-        material: PAPER
+      '2':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDYzOThkYzZmNGRiNDEwMjRkMTVmYzQyYTYyODZkZjM2MTc5Y2M4YzM1NjhjYTY2Y2FiZDYxM2JkYjc0NiJ9fX0=
+        stack: 1
+        name: Mayor
+        lore:
+        - '%townyadvanced_town_mayor%'
+        - ''
+        - "Click to access the mayor's"
+        - 'office for town settings.'
+        commands:
+        - open= towny-town-mayor {Top}
+        - plot perm hud
+      '4':
+        material: PLAYER_HEAD
         stack: 1
         name: Resident List
+        lore:
+        - Click to see list of residents.
         commands:
         - town reslist
+      '6':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWU0ODYxNWRmNmI3ZGRmM2FkNDk1MDQxODc2ZDkxNjliZGM5ODNhM2ZhNjlhMmFjYTEwN2U4ZjI1MWY3Njg3In19fQ==
+        stack: 1
+        name: Online Players
+        lore:
+        - 'Currently Online:'
+        - '%townyadvanced_town_residents_online%'
+        commands:
+        - town online
       '8':
         material: PAPER
         stack: 1
         name: Towns Lists
         commands:
         - open= towny-town-townlists {Top}
-      '10':
-        material: OAK_DOOR
+      '19':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWI4ZmUxYzQ0YWNiZWViOTE4ZDM4YmM0MmQ1NTBiZWRkNWMzZGQwNDk4ODlmZDllZWVhMTE2MGFiOGI2YSJ9fX0=
         stack: 1
-        name: Public Spawning
-      '12':
-        material: GOLD_INGOT
+        name: Town Bank
+        hasperm:
+          perm: towny.command.town.withdraw
+          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWI4ZmUxYzQ0YWNiZWViOTE4ZDM4YmM0MmQ1NTBiZWRkNWMzZGQwNDk4ODlmZDllZWVhMTE2MGFiOGI2YSJ9fX0=
+          stack: 1
+          name: Town Bank
+          lore:
+          - 'Click to access town coffer.'
+          commands:
+          - open= towny-town-bank {Top}
+        hasperm:
+          perm: towny.command.town.deposit
+          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWI4ZmUxYzQ0YWNiZWViOTE4ZDM4YmM0MmQ1NTBiZWRkNWMzZGQwNDk4ODlmZDllZWVhMTE2MGFiOGI2YSJ9fX0=
+          stack: 1
+          name: Town Bank
+          lore:
+          - 'Click to access town coffer.'
+          commands:
+          - open= towny-town-bank {Top}
+      '21':
+        material: IRON_BLOCK
         stack: 1
         name: Town Bank Balance
         lore:
         - '%townyadvanced_town_balance%'
-      '14':
-        material: GOLD_NUGGET
+      '23':
+        material: IRON_INGOT
         stack: 1
         name: Town Tax Rate
         lore:
         - '%townyadvanced_daily_town_tax%'
-      '16':
+      '25':
         material: IRON_NUGGET
         stack: 1
         name: Town Upkeep
         lore:
         - '%townyadvanced_daily_town_upkeep%'
-      '27':
-        material: MAP
+      '37':
+        material: DAYLIGHT_DETECTOR
         stack: 1
-        name: Accepting Invites
-      '29':
-        material: GOLDEN_SWORD
+        name: Town Size
+        lore:
+        - '%townyadvanced_town_townblocks_used%/%townyadvanced_town_townblocks_maximum%'
+      '39':
+        material: COMPASS
         stack: 1
-        name: PVP
-      '31':
-        material: CREEPER_HEAD
-        stack: 1
-        name: Mob Spawns
-      '33':
-        material: CAMPFIRE
-        stack: 1
-        name: Fire
-      '35':
-        material: TNT
-        stack: 1
-        name: Explosions
+        name: 'Town Spawn'
+        commands:
+        - town spawn
       '45':
         material: BARRIER
         stack: 1
         name: Back to Resident Menu
         commands:
         - open= towny-resident
-      '49':
-        material: DAYLIGHT_DETECTOR
-        stack: 1
-        name: Town Size
-        lore:
-        - '%townyadvanced_town_townblocks_used%/%townyadvanced_town_townblocks_maximum%'
-      '52':
-        material: PAPER
-        stack: 1
-        name: Mayor Menu
-        lore: 'testing 123 PIGLIN'
-        commands:
-        - open= towny-town-mayor {Top}
-        - plot perm hud
       '53':
         material: COMMAND_BLOCK
         stack: 1
         name: Town Permissions
+        lore:
+        - 'Notes:'
+        - ''
+        - 'Town permissions WILL NOT'
+        - 'override plot permissions'
+        - 'for a plot that has been'
+        - 'set by a resident or yourself.'
+        - ''
+        - 'If a plot has a different'
+        - 'permission than you want,'
+        - 'you will need to go to the'
+        - 'plot and use plot permissions'
+        - 'to change them separately.'
         commands:
         - open= towny-town-perms
         - plot perm hud

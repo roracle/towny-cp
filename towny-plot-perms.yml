@@ -10,6 +10,18 @@ panels:
     - plot perm hud
     empty: BLACK_STAINED_GLASS_PANE
     item:
+      '0':
+        material: NAME_TAG
+        stack: 1
+        name: Rename Plot
+        lore:
+        - "Current name:"
+        - '%townyadvanced_player_location_plot_name%'
+        commands:
+        - "msg= What would you like to name this plot?"
+        - "cpc"
+        player-input:
+        - "plot set name %cp-player-input%"
       '3':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzZmNjlmN2I3NTM4YjQxZGMzNDM5ZjM2NThhYmJkNTlmYWNjYTM2NmYxOTBiY2YxZDZkMGEwMjZjOGY5NiJ9fX0
         stack: 1
@@ -70,6 +82,15 @@ panels:
         commands:
         - left= plot set perm outsider build on
         - right= plot set perm outsider build off
+      '17':
+        material: GOLDEN_SWORD
+        name: Toggle PVP
+        lore:
+        - Left Click = ON
+        - Right Click = OFF
+        commands:
+        - left= plot toggle pvp on
+        - right= plot toggle pvp off
       '20':
         material: IRON_PICKAXE
         stack: 1
@@ -114,6 +135,15 @@ panels:
         commands:
         - left= plot set perm outsider destroy on
         - right= plot set perm outsider destroy off
+      '26':
+        material: TNT
+        name: Toggle Explosions
+        lore:
+        - Left Click = ON
+        - Right Click = OFF
+        commands:
+        - left= plot toggle explosion on
+        - right= plot toggle explosion off
       '29':
         material: REPEATER
         stack: 1
@@ -158,6 +188,15 @@ panels:
         commands:
         - left= plot set perm outsider switch on
         - right= plot set perm outsider switch off
+      '35':
+        material: CAMPFIRE
+        name: Fire
+        lore:
+        - Left Click = ON
+        - Right Click = OFF
+        commands:
+        - left= plot toggle fire on
+        - right= plot toggle fire off
       '38':
         material: POTION
         stack: 1
@@ -202,6 +241,15 @@ panels:
         commands:
         - left= plot set perm outsider itemuse on
         - right= plot set perm outsider itemuse off
+      '44':
+        material: CREEPER_HEAD
+        name: Mob Spawns
+        lore:
+        - Left Click = ON
+        - Right Click = OFF
+        commands:
+        - left= plot toggle mobs on
+        - right= plot toggle mobs off
       '45':
         material: BARRIER
         stack: 1

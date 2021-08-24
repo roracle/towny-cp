@@ -13,102 +13,318 @@ panels:
         stack: 1
         name: Plot Info
         lore:
-        - Name: '%townyadvanced_player_location_plot_name%'
-        - Owner: '%townyadvanced_player_location_plot_owner_name%'
+        - "Plot Name:"
+        - "%townyadvanced_player_location_plot_name%"
       '4':
-        material: ACACIA_BUTTON
+        material: PLAYER_HEAD
         stack: 1
-        name: Reset Plot Type
-        commands:
-        - plot set reset
+        name: 'Plot Location:'
+        lore:
+        - "%townyadvanced_player_location_town_or_wildname%"
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: ACACIA_BUTTON
+          stack: 1
+          name: Reset Plot Type
+          commands:
+          - plot set reset
       '8':
-        material: CRIMSON_SIGN
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Not For Sale
-        #DO THIS LATER
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: false
+          material: OAK_SIGN
+          stack: 1
+          name: Claim/Purchase Plot
+          lore:
+          - "Note: this will be more"
+          - "dynamic in the future."
+          commands:
+          - plot claim
+          hasperm:
+            perm: towny.command.town.mayor
+            material: DARK_OAK_SIGN
+            stack: 1
+            name: Sell Plot (Mayor)
+            lore:
+            - "Note: this will be more"
+            - "dynamic in the future."
+            commands:
+            - "msg= How much do you want to sell this plot for?"
+            - "cpc"
+            player-input:
+            - "plot forsale %cp-player-input%"
+        hasvalue0:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: DARK_OAK_SIGN
+          stack: 1
+          name: Sell Plot
+          lore:
+          - "Note: this will be more"
+          - "dynamic in the future."
+          commands:
+          - "msg= How much do you want to sell this plot for?"
+          - "cpc"
+          player-input:
+          - "plot forsale %cp-player-input%"
       '11':
-        material: GRASS_BLOCK
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Wilds
-        commands:
-        - plot set wilds
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: GRASS_BLOCK
+          stack: 1
+          name: Wilds
+          commands:
+          - plot set wilds
       '13':
-        material: DIAMOND
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Shop
-        commands:
-        - plot set shop
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: DIAMOND
+          stack: 1
+          name: Shop
+          commands:
+          - plot set shop
       '15':
-        material: GOLDEN_SWORD
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Arena
-        commands:
-        - plot set arena
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: DIAMOND_SWORD
+          stack: 1
+          name: Arena
+          commands:
+          - plot set arena
+      '17':
+        material: BLACK_STAINED_GLASS_PANE
+        stack: 1
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: ACACIA_SIGN
+          stack: 1
+          name: Take Plot Off Market
+          lore:
+          - "Note: this will be more"
+          - "dynamic in the future."
+          commands:
+          - plot notforsale
+        hasvalue0:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: false
+          hasperm:
+            perm: towny.command.town.mayor
+            material: ACACIA_SIGN
+            stack: 1
+            name: Take Plot Off Market (Mayor)
+            lore:
+            - "Note: this will be more"
+            - "dynamic in the future."
+            commands:
+            - plot notforsale
       '21':
-        material: LIGHT_BLUE_BANNER
-        banner: []
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Embassy
-        commands:
-        - plot set embassy
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: LIGHT_BLUE_BANNER
+          banner: []
+          stack: 1
+          name: Embassy
+          commands:
+          - plot set embassy
+      '22':
+        material: BARRIER
+        name: error
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: BLACK_STAINED_GLASS_PANE
+          stack: 1
+          name: '&f'
+        hasvalue0:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: false
+          hasvalue:
+            compare: '%townyadvanced_player_plot_type%'
+            value: Default
+            material: ACACIA_BUTTON
+            name: Default
+          hasvalue0:
+            compare: '%townyadvanced_player_plot_type%'
+            value: Wilds
+            material: GRASS_BLOCK
+            name: Wilds
+          hasvalue1:
+            compare: '%townyadvanced_player_plot_type%'
+            value: Shop
+            material: DIAMOND
+            name: Shop
+          hasvalue2:
+            compare: '%townyadvanced_player_plot_type%'
+            value: Arena
+            material: DIAMOND_SWORD
+            name: Arena
+          hasvalue3:
+            compare: '%townyadvanced_player_plot_type%'
+            value: Embassy
+            material: LIGHT_BLUE_BANNER
+            banner: []
+            name: Embassy
+          hasvalue4:
+            compare: '%townyadvanced_player_plot_type%'
+            value: Inn
+            material: BLUE_BED
+            name: Inn
+          hasvalue5:
+            compare: '%townyadvanced_player_plot_type%'
+            value: Jail
+            material: IRON_BARS
+            name: Jail
+          hasvalue6:
+            compare: '%townyadvanced_player_plot_type%'
+            value: Bank
+            material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWI4ZmUxYzQ0YWNiZWViOTE4ZDM4YmM0MmQ1NTBiZWRkNWMzZGQwNDk4ODlmZDllZWVhMTE2MGFiOGI2YSJ9fX0=
+            name: Bank
+          hasvalue7:
+            compare: '%townyadvanced_player_plot_type%'
+            value: Farm
+            material: FARMLAND
+            name: Farm
+          hasvalue8:
+            compare: '%townyadvanced_player_plot_type%'
+            value: ''
+            material: DIRT
+            name: Wilderness
       '23':
-        material: BLUE_BED
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Inn
-        commands:
-        - plot set inn
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: BLUE_BED
+          stack: 1
+          name: Inn
+          commands:
+          - plot set inn
+      '26':
+        material: BLACK_STAINED_GLASS_PANE
+        stack: 1
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: RED_BANNER
+          banner: []
+          name: Unclaim Plot
+          commands:
+          - plot unclaim
+        hasvalue0:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: false
+          material: LIME_BANNER
+          banner: []
+          name: Purchase Plot
+          commands:
+          - plot claim
       '29':
-        material: IRON_BARS
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Jail
-        commands:
-        - plot set jail
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: IRON_BARS
+          stack: 1
+          name: Jail
+          commands:
+          - plot set jail
       '31':
-        material: GOLD_INGOT
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Bank
-        commands:
-        - plot set bank
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWI4ZmUxYzQ0YWNiZWViOTE4ZDM4YmM0MmQ1NTBiZWRkNWMzZGQwNDk4ODlmZDllZWVhMTE2MGFiOGI2YSJ9fX0=
+          stack: 1
+          name: Bank
+          commands:
+          - plot set bank
       '33':
-        material: FARMLAND
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Farm
-        commands:
-        - plot set farm
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: FARMLAND
+          stack: 1
+          name: Farm
+          commands:
+          - plot set farm
       '45':
         material: BARRIER
         stack: 1
         name: Back to Resident Menu
         commands:
         - open= towny-resident
-      '47':
-        material: WOODEN_SWORD
-        name: 'PVP is disabled here.'
-        hasvalue:
-          compare: '%townyadvanced_player_location_pvp%'
-          value: (PVP)
-          material: GOLDEN_SWORD
-          stack: 1
-          name: 'PVP is enabled here.'
       '48':
-        material: TNT
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Explosions
-        #DO THIS LATER
-      '49':
-        material: CAMPFIRE
-        stack: 1
-        name: Fire
-        #DO THIS LATER
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGU0YjhiOGQyMzYyYzg2NGUwNjIzMDE0ODdkOTRkMzI3MmE2YjU3MGFmYmY4MGMyYzViMTQ4Yzk1NDU3OWQ0NiJ9fX0=
+          stack: 1
+          name: Remove Trusted Player
+          commands:
+          - "msg= What player are we no longer trusting in this plot?"
+          - "cpc"
+          player-input:
+          - "plot trust remove %cp-player-input%"
       '50':
-        material: CREEPER_HEAD
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Mob Spawns
-        #DO THIS LATER
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
+          stack: 1
+          name: Add Trusted Player
+          commands:
+          - "msg= What player are we trusting in this plot?"
+          - "cpc"
+          player-input:
+          - "plot trust add %cp-player-input%"
       '53':
-        material: COMMAND_BLOCK
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Plot Permissions
-        commands:
-        - open= towny-plot-perms
-        - plot perm hud
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_player_plot_owner%'
+          value: true
+          material: COMMAND_BLOCK
+          stack: 1
+          name: Plot Permissions
+          commands:
+          - open= towny-plot-perms
+          - plot perm hud

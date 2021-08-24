@@ -6,78 +6,230 @@ panels:
     empty: BLACK_STAINED_GLASS_PANE
     item:
       '0':
-        material: GOLD_INGOT
+        material: WOODEN_SWORD
+        name: PVP Not Allowed Here
+        hasvalue:
+          compare: '%townyadvanced_player_location_pvp%'
+          value: (PVP)
+          material: GOLDEN_SWORD
+          name: PVP Allowed Here
         stack: 1
-        name: Town Bank
-        commands:
-        - open= towny-town-bank {Top}
-      '1':
-        material: GOLD_BLOCK
-        stack: 1
-        name: Nation Bank
-        commands:
-        - open= towny-nation-bank {Top}
-      '3':
-        material: RED_BANNER
-        banner: []
-        stack: 1
-        name: Unclaim
-        lore:
-        - Middle click to unclaim the plot you are standing in.
-        commands:
-        - middle= town unclaim
       '4':
-        material: DAYLIGHT_DETECTOR
+        material: MOSS_CARPET
         stack: 1
-        name: Plot Borders Toggle
+        name: 'Available Claims:'
         lore:
-        - Middle click to toggle.
-        commands:
-        - middle= resident toggle plotborder
-      '5':
-        material: LIME_BANNER
-        banner: []
-        stack: 1
-        name: Claim This Plot
-        lore:
-        - Middle click to claim the plot you are standing in.
-        commands:
-        - town claim
-      '7':
-        material: LEATHER_BOOTS
-        stack: 1
-        name: Toggle Walk to Claim
-        lore:
-        - Middle Click to toggle this.
-        commands:
-        - middle= resident toggle townclaim
+        - '%townyadvanced_town_townblocks_used%/%townyadvanced_town_townblocks_maximum%'
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: false
+          material: GREEN_BANNER
+          banner:
+          - LIGHT_GRAY,BRICKS
+          - BROWN,STRIPE_TOP
+          - LIGHT_BLUE,CURLY_BORDER
+          - GREEN,HALF_HORIZONTAL_MIRROR
+          - BROWN,TRIANGLE_BOTTOM
+          stack: 1
+          name: 'New Town'
+          lore:
+          - 'Left Click:'
+          - 'Start a new town.'
+          - 'You will be asked to input'
+          - 'a name for your town in the'
+          - 'chat box.'
+          commands:
+          - msg= What would you like to name your town?
+          - cpc
+          player-input:
+          - town new %cp-player-input%
       '8':
         material: MAP
         stack: 1
         name: Map HUD
+        lore:
+        - 'Left Click:'
+        - 'Toggle towny plot HUD.'
         commands:
         - towny map hud
+      '10':
+        material: BLACK_STAINED_GLASS_PANE
+        stack: 1
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          material: WHITE_BANNER
+          banner:
+          - GRAY,HALF_VERTICAL_MIRROR
+          - GRAY,HALF_VERTICAL
+          - LIGHT_GRAY,STRIPE_SMALL
+          - GRAY,HALF_HORIZONTAL
+          - RED,BORDER
+          - RED,STRIPE_TOP
+          stack: 1
+          name: Unclaim All
+          lore:
+          - 'Right Click:'
+          - This will unclaim everything
+          - but keep your homeblock.
+      '11':
+        material: BLACK_STAINED_GLASS_PANE
+        stack: 1
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          material: RED_BANNER
+          banner:
+          - BLACK,CIRCLE_MIDDLE
+          stack: 1
+          name: Unclaim Radius
+          lore:
+          - 'Right Click:'
+          - Input a radius to unclaim
+          - from your current plot.
+      '12':
+        material: BLACK_STAINED_GLASS_PANE
+        stack: 1
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          material: RED_BANNER
+          banner: []
+          stack: 1
+          name: Unclaim Land
+          lore:
+          - 'Right Click:'
+          - Unclaim the plot
+          - you are standing in.
+          commands:
+          - right= town unclaim
+      '13':
+        material: DAYLIGHT_DETECTOR
+        stack: 1
+        name: Plot Borders
+        lore:
+        - 'Right Click:'
+        - Toggle on/off
+        - ''
+        - 'Tip:'
+        - F3+G toggles chunk borders
+        - to help visualize your area.
+        commands:
+        - right= resident toggle plotborder
+      '14':
+        material: BLACK_STAINED_GLASS_PANE
+        stack: 1
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          material: GREEN_BANNER
+          banner: []
+          stack: 1
+          name: Claim Land
+          lore:
+          - 'Right Click:'
+          - Claim the plot you
+          - are standing in.
+          commands:
+          - right= town claim
+      '15':
+        material: BLACK_STAINED_GLASS_PANE
+        stack: 1
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          material: GREEN_BANNER
+          banner:
+          - RED,CIRCLE_MIDDLE
+          stack: 1
+          name: Claim Radius
+          lore:
+          - 'Right Click:'
+          - Input a radius to claim
+          - from your current plot.
+          commands:
+          - right= msg= What would you like to name your town?
+          - cpc
+          player-input:
+          - town claim %cp-player-input%
+      '16':
+        material: BLACK_STAINED_GLASS_PANE
+        stack: 1
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          material: GREEN_BANNER
+          banner:
+          - YELLOW,FLOWER
+          - RED,CIRCLE_MIDDLE
+          stack: 1
+          name: Claim All
+          lore:
+          - 'Right Click:'
+          - Claim as many plots as
+          - possible from where you stand.
+          commands:
+          - town claim auto
+      '22':
+        material: BLACK_STAINED_GLASS_PANE
+        stack: 1
+        name: '&f'
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          material: BLACK_BANNER
+          banner:
+          - GREEN,FLOWER
+          - LIGHT_GRAY,BRICKS
+          - LIGHT_BLUE,BORDER
+          - LIGHT_BLUE,TRIANGLES_TOP
+          - BLACK,TRIANGLE_BOTTOM
+          - LIME,STRIPE_BOTTOM
+          stack: 1
+          name: Claim an Outpost
+          lore:
+          - 'Right Click:'
+          - 'Claim plot as an outpost.'
+          - 'Cannot be connected to'
+          - 'the rest of your town.'
+          commands:
+          - town claim outpost
       '18':
         material: BARRIER
         stack: 1
-        name: Close Towny Menu
+        name: Back to Minecraft
         commands:
-        - "cpc"
-      '19':
-        material: COMPASS
-        stack: 1
-        name: Town Spawn
-        commands:
-        - t spawn
-      '25':
-        material: SPYGLASS
-        stack: 1
-        name: Admin Spy
-        commands:
-        - towny spy
+        - cpc
       '26':
-        material: COMMAND_BLOCK
+        material: CAMPFIRE
         stack: 1
-        name: Towny World Settings
-        commands:
-        - open= towny-world-admin {Top}
+        name: Nomad
+        lore:
+        - As a nomad, you may build a
+        - campfire and place it in a plot
+        - for temporary shelter.
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          material: LEATHER_BOOTS
+          stack: 1
+          name: Resident
+          lore:
+          - You are a town resident, and
+          - have some restrictions.
+          hasperm:
+            perm: towny.command.town.claim
+            material: GOLDEN_BOOTS
+            stack: 1
+            name: Walk to Claim
+            lore:
+            - 'Right Click:'
+            - 'Toggle walk to claim.'
+            commands:
+            - right= resident toggle townclaim

@@ -42,7 +42,8 @@ panels:
         stack: 1
         name: Set Title For A Resident
         lore:
-        - Type the resident's username followed by the title you wish to give them.
+        - Type the resident's username followed by'
+        - 'the title you wish to give them.'
         commands:
         - "msg= Type the username, a space, then the title you want to give them:"
         - cpc
@@ -53,7 +54,8 @@ panels:
         stack: 1
         name: Set Surname For A Resident
         lore:
-        - Type the resident's username followed by the surname you wish to give them
+        - Type the resident's username followed by'
+        - 'the surname you wish to give them.'
         commands:
         - "msg= Type the username, a space, then the surname you want to give them:"
         - cpc
@@ -68,19 +70,19 @@ panels:
         stack: 1
         name: Set Town Tax Percentage Cap
       '12':
-        material: GOLD_INGOT
+        material: IRON_INGOT
         stack: 1
         name: Set Default Plot Price
       '13':
-        material: GOLD_BLOCK
+        material: IRON_BLOCK
         stack: 1
         name: Set Plot Taxes
       '14':
-        material: IRON_INGOT
+        material: GOLD_INGOT
         stack: 1
         name: Set Default Shop Plot Price
       '15':
-        material: IRON_BLOCK
+        material: GOLD_BLOCK
         stack: 1
         name: Set Shop Plot Taxes
       '16':
@@ -96,7 +98,8 @@ panels:
         stack: 1
         name: Set Town Mayor
         lore:
-        - This will change the town mayor from you to another person.
+        - This will change the town mayor
+        - from you to another person.
         commands:
         - msg= Who would you like to set as mayor?
         - cpc
@@ -155,7 +158,8 @@ panels:
         stack: 1
         name: Remove Town Rank to Player
         lore:
-        - 'Type the name of the player followed by the rank to remove.'
+        - 'Type the name of the player'
+        - 'followed by the rank to remove.'
         - 'Available ranks to remove are:'
         - 'assistant'
         - 'donator'
@@ -172,7 +176,8 @@ panels:
         stack: 1
         name: Add Town Rank to Player
         lore:
-        - 'Type the name of the player followed by the rank to add.'
+        - 'Type the name of the player'
+        - 'followed by the rank to add.'
         - 'Available ranks are:'
         - 'assistant'
         - 'donator'
@@ -191,9 +196,31 @@ panels:
         commands:
         - open= towny-town
         - plot perm hud
+      '48':
+        material: LIGHT_BLUE_STAINED_GLASS
+        stack: 1
+        name: Set Home Block
+        commands:
+        - town set homeblock
+      '50':
+        material: NETHER_STAR
+        stack: 1
+        name: Set Home Spawn
+        commands:
+        - town set spawn
       '53':
         material: COMPOSTER
         stack: 1
         name: Delete Town
+        lore:
+        - '!!!WARNING!!!'
+        - 'Right Click:'
+        - 'This will delete your town'
+        - 'and remove all residents.'
+        - 'Land claims will be DELETED'
+        - 'and you will have to earn'
+        - 'your claims again!'
         commands:
-        - town delete
+        - right= town delete
+        - cpc
+        - sudo= confirm
