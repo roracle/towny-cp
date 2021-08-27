@@ -2,26 +2,86 @@ panels:
   towny-notown:
     perm: default
     rows: 6
-    title: '&8Towny - Not in a Town'
+    title: '&8Towny - Create or Join a Town'
     commands-on-open:
     - open= towny-quick {Middle}
     - open= towny-hotbar {Bottom}
     empty: BLACK_STAINED_GLASS_PANE
     item:
       '13':
-        material: GREEN_BANNER
-        banner: []
+        material: BARRIER
         stack: 1
-        name: Create New Town
-        commands:
-        - "msg= What would you like to name your town?"
-        - "cpc"
-        player-input:
-        - "t new %cp-player-input%"
+        name: 'ERROR'
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: false
+          material: GREEN_BANNER
+          banner:
+          - LIGHT_GRAY,BRICKS
+          - BROWN,STRIPE_TOP
+          - LIGHT_BLUE,CURLY_BORDER
+          - GREEN,HALF_HORIZONTAL_MIRROR
+          - BROWN,TRIANGLE_BOTTOM
+          stack: 1
+          name: 'New Town'
+          lore:
+          - 'Left Click:'
+          - 'Start a new town.'
+          - 'You will be asked to input'
+          - 'a name for your town in the'
+          - 'chat box.'
+          commands:
+          - msg= What would you like to name your town?
+          - cpc
+          player-input:
+          - town new %cp-player-input%
+        hasvalue0:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          material: MOSS_CARPET
+          stack: 1
+          name: 'Available Claims:'
+          lore:
+          - '%townyadvanced_town_townblocks_used%/%townyadvanced_town_townblocks_maximum%'
+          hasvalue:
+            compare: '%townyadvanced_town_prefix%'
+            value: ruins
+            material: GREEN_BANNER
+            banner:
+            - LIGHT_GRAY,BRICKS
+            - BROWN,STRIPE_TOP
+            - LIGHT_BLUE,CURLY_BORDER
+            - GREEN,HALF_HORIZONTAL_MIRROR
+            - BROWN,TRIANGLE_BOTTOM
+            commands:
+            - town reclaim
+            - delay= 5 open= towny-town
+          hasvalue0:
+            compare: '%townyadvanced_town_postfix%'
+            value: ruins
+            material: GREEN_BANNER
+            banner:
+            - LIGHT_GRAY,BRICKS
+            - BROWN,STRIPE_TOP
+            - LIGHT_BLUE,CURLY_BORDER
+            - GREEN,HALF_HORIZONTAL_MIRROR
+            - BROWN,TRIANGLE_BOTTOM
+            commands:
+            - town reclaim
+            - delay= 5 open= towny-town
       '31':
-        material: PLAYER_HEAD
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmZiM2EwZTVkZWE5MTVhMjI0Zjg2YzUyOGQ0MTRlYzBmMWRiNmY0N2NkYjk3MTg3NzVhZDNhOTM0MThmZTI0In19fQ==
         stack: 1
         name: Join Existing Town
+        lore:
+        - Join a town with open
+        - invitations turned on.
+        commands:
+        - "msg= Which town would you like to join?"
+        - cpc
+        player-input:
+        - "town join %cp-player-input%"
+        - delay= 5 open= towny-town
       '45':
         material: BARRIER
         stack: 1

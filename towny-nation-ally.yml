@@ -1,0 +1,97 @@
+panels:
+  towny-nation-ally:
+    perm: default
+    rows: 6
+    title: '&8Towny - Nation Allies'
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '1':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGU0YjhiOGQyMzYyYzg2NGUwNjIzMDE0ODdkOTRkMzI3MmE2YjU3MGFmYmY4MGMyYzViMTQ4Yzk1NDU3OWQ0NiJ9fX0=
+        stack: 1
+        name: Remove Ally
+        commands:
+        - "msg= Who would you like to stop being allies with?"
+        - cpc
+        player-input:
+        - "nation ally remove %cp-player-input%"
+        - open= towny-nation-ally
+      '2':
+        material: MAP
+        stack: 1
+        name: Ally List
+        commands:
+        - nation allylist
+      '3':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWZmMzE0MzFkNjQ1ODdmZjZlZjk4YzA2NzU4MTA2ODFmOGMxM2JmOTZmNTFkOWNiMDdlZDc4NTJiMmZmZDEifX19
+        stack: 1
+        name: Add Ally
+        commands:
+        - "msg= Who would you like to add as an ally?"
+        - cpc
+        player-input:
+        - "nation ally add %cp-player-input%"
+        - open= towny-nation-ally
+      '5':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2QxNWI1ZDc5YmVkYWRjMTQ1ZmExN2NjMzZhMmUwYzliMDg4YjRlZTc0Zjg2ZWE1ODhiZDFhZDhjZGJkMjIifX19
+        stack: 1
+        name: Remove Enemy
+        commands:
+        - "msg= Which nation would you like to stop being enemies with?"
+        - cpc
+        player-input:
+        - "nation enemy remove %cp-player-input%"
+        - open= towny-nation-ally
+      '6':
+        material: MAP
+        stack: 1
+        name: Enemy List
+        commands:
+        - nation enemylist
+      '7':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWM3MzFjM2M3MjNmNjdkMmNmYjFhMTE5MmI5NDcwODZmYmEzMmFlYTQ3MmQzNDdhNWVkNWQ3NjQyZjczYiJ9fX0=
+        stack: 1
+        name: Add Enemy
+        commands:
+        - "msg= Which town would you like to add as an enemy?"
+        - cpc
+        player-input:
+        - "nation enemy add %cpc-player-input%"
+        - open= towny-nation-ally
+      '22':
+        material: PAPER
+        stack: 1
+        name: Received Ally Requests
+        commands:
+        - nation ally received
+      '30':
+        material: RED_STAINED_GLASS_PANE
+        stack: 1
+        name: Deny Ally Request
+        commands:
+        - "msg= Which nation's request are you denying?"
+        - cpc
+        player-input:
+        - "nation ally deny %cp-player-input%"
+        - open= towny-nation-ally
+      '32':
+        material: LIME_STAINED_GLASS_PANE
+        stack: 1
+        name: Accept Ally Request
+        commands:
+        - "msg= Which nation's request are you accepting?"
+        - cpc
+        player-input:
+        - "nation ally accept %cp-player-input%"
+        - open= towny-nation-ally
+      '40':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDY5MmRkYTNlYjNkNmZmNGNhYjcyMWNjNWMwZWY4ZjI5MWFjMGY5ZjFkYTlkZmRhODczY2IwOGM2ZTE5ODVkMiJ9fX0=
+        stack: 1
+        name: Sent Ally Requests
+        commands:
+        - nation ally sent
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Nation Incumbant Menu
+        commands:
+        - open= towny-nation-king

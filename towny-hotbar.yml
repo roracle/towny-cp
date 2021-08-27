@@ -10,14 +10,14 @@ panels:
       '0':
         material: cps= self
         stack: 1
-        name: My Resident Menu
+        name: (in)Sanity Menu
         commands:
         - cpc
-        - open= towny-resident {Top}
+        - open= insanity {Top}
       '2':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDM0NjdhNTMxOTc4ZDBiOGZkMjRmNTYyODVjNzI3MzRkODRmNWVjODhlMGI0N2M0OTMyMzM2Mjk3OWIzMjNhZiJ9fX0=
         stack: 1
-        name: Wilderness Info
+        name: Wilderness Menu
         commands:
         - cpc
         - open= towny-world {Top}
@@ -25,6 +25,12 @@ panels:
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTBmZmUyZmY1ODdhNDlhMjY3N2NjZmYyNWE4MWFmZTA0ZjU0ZTFhMWUxN2YwYjE1ODEzODRhMmU2NGZlNiJ9fX0=
         stack: 1
         name: Plot Menu
+        lore:
+        - 'Menu for this plot.'
+        - ''
+        - 'Tip:'
+        - 'Do /town plots {townname}'
+        - 'for info about plots in a town.'
         commands:
         - cpc
         - open= towny-plot {Top}
@@ -35,18 +41,24 @@ panels:
         hasvalue:
           compare: '%townyadvanced_has_town%'
           value: true
-          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmZiM2EwZTVkZWE5MTVhMjI0Zjg2YzUyOGQ0MTRlYzBmMWRiNmY0N2NkYjk3MTg3NzVhZDNhOTM0MThmZTI0In19fQ==
+          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDY4MzRjOWY0YTU0MzdkZjVhNjViMDI5YzZiNDcwYjBmMTI0ODljMjg1M2M1NjZiYmU5N2U3OTFmMjc2YWQ0In19fQ==
           stack: 1
           name: Town Menu
+          lore:
+          - '%townyadvanced_town%'
+          - ''
+          - 'Tip:'
+          - 'Do /town {townname} for'
+          - 'info on a specific town.'
           commands:
-          - cpc
-          - open= towny-town {Top}
+          - left= cpc
+          - left= open= towny-town {Top}
         hasvalue0:
           compare: '%townyadvanced_has_town%'
           value: false
-          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTk1NTM0ZTAyYzU5YjMzZWNlNTYxOTI4MDMzMTk3OTc3N2UwMjVmYTVmYTgxYWU3NWU5OWZkOGVmZGViYjgifX19
+          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjNkMDJjZGMwNzViYjFjYzVmNmZlM2M3NzExYWU0OTc3ZTM4YjkxMGQ1MGVkNjAyM2RmNzM5MTNlNWU3ZmNmZiJ9fX0=
           stack: 1
-          name: You must create or join a town first.
+          name: Click create or join a town.
           commands:
           - cpc
           - open= towny-notown {Top}
@@ -57,9 +69,11 @@ panels:
         hasvalue:
           compare: '%townyadvanced_has_town%'
           value: true
-          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjQ1NTlkNzU0NjRiMmU0MGE1MThlNGRlOGU2Y2YzMDg1ZjBhM2NhMGIxYjcwMTI2MTRjNGNkOTZmZWQ2MDM3OCJ9fX0=
+          material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDljMTgzMmU0ZWY1YzRhZDljNTE5ZDE5NGIxOTg1MDMwZDI1NzkxNDMzNGFhZjI3NDVjOWRmZDYxMWQ2ZDYxZCJ9fX0=
           stack: 1
           name: Outpost Menu
+          lore:
+          - Warps for your outposts.
           commands:
           - cpc
           - open= towny-town-outpost {Top}
@@ -76,6 +90,12 @@ panels:
             material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDU1ODdkYTdmZTczMzZlOGFiOWY3OTFlYTVlMmNmYzhhODI3Y2E5NTk1NjdlYjlkNTNhNjQ3YmFiZjk0OGQ1In19fQ==
             stack: 1
             name: Nation Menu
+            lore:
+            - '%townyadvanced_nation%'
+            - ''
+            - 'Tip:'
+            - 'Do /nation {nationname} for'
+            - 'info on a specific nation.'
             commands:
             - cpc
             - open= towny-nation {Top}

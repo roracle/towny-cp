@@ -14,38 +14,6 @@ panels:
         name: Town Bank History
         commands:
         - town bankhistory
-      '19':
-        material: DIAMOND
-        stack: 1
-        name: Set Town Taxes
-      '20':
-        material: DIAMOND_BLOCK
-        stack: 1
-        name: Set Town Tax Percentage Cap
-      '24':
-        material: IRON_INGOT
-        stack: 1
-        name: Set Default Plot Price
-      '25':
-        material: IRON_BLOCK
-        stack: 1
-        name: Set Plot Taxes
-      '33':
-        material: GOLD_INGOT
-        stack: 1
-        name: Set Default Shop Plot Price
-      '34':
-        material: GOLD_BLOCK
-        stack: 1
-        name: Set Shop Plot Taxes
-      '28':
-        material: COPPER_INGOT
-        name: Set Embassy Plot Price
-        stack: 1
-      '29':
-        material: COPPER_BLOCK
-        stack: 1
-        name: Set Embassy Plot Taxes
       '4':
         material: BELL
         stack: 1
@@ -59,6 +27,86 @@ panels:
         name: Purchase Bonus Land Claims
         commands:
         - open= towny-town-claims
+      '19':
+        material: DIAMOND
+        stack: 1
+        name: Set Town Taxes
+        commands:
+        - "msg= What would you like to set taxes to?"
+        - cpc
+        player-input:
+        - "town set taxes %cp-player-input%"
+        - delay= 5 open= towny-town-bank
+      '20':
+        material: DIAMOND_BLOCK
+        stack: 1
+        name: Set Town Tax Percentage Cap
+        commands:
+        - "msg= What would you like to set tax percent cap to?"
+        - cpc
+        player-input:
+        - "town set taxpercentcap %cp-player-input%"
+        - delay= 5 open= towny-town-bank
+      '24':
+        material: IRON_INGOT
+        stack: 1
+        name: Set Default Plot Price
+        commands:
+        - "msg= What should the default plot price be?"
+        - cpc
+        player-input:
+        - "town set plotprice %cp-player-input%"
+        - delay= 5 open= towny-town-bank
+      '25':
+        material: IRON_BLOCK
+        stack: 1
+        name: Set Plot Taxes
+        commands:
+        - "msg= What would you like to set the plot tax to?"
+        - cpc
+        player-input:
+        - "town set plottax %cp-player-input%"
+        - delay= 5 open= towny-town-bank
+      '33':
+        material: GOLD_INGOT
+        stack: 1
+        name: Set Default Shop Plot Price
+        commands:
+        - "msg= What would you like to set shop prices to?"
+        - cpc
+        player-input:
+        - "town set shopprice %cp-player-input%"
+        - delay= 5 open= towny-town-bank
+      '34':
+        material: GOLD_BLOCK
+        stack: 1
+        name: Set Shop Plot Taxes
+        commands:
+        - "msg= What would you like to set shop taxes to?"
+        - cpc
+        player-input:
+        - "town set shoptax %cp-player-input%"
+        - delay= 5 open= towny-town-bank
+      '28':
+        material: COPPER_INGOT
+        name: Set Embassy Plot Price
+        stack: 1
+        commands:
+        - "msg= What would you like to set embassy cost to?"
+        - cpc
+        player-input:
+        - "town set embassyprice %cp-player-input%"
+        - delay= 5 open= towny-town-bank
+      '29':
+        material: COPPER_BLOCK
+        stack: 1
+        name: Set Embassy Plot Taxes
+        commands:
+        - "msg= What would you like to set embassy taxes to?"
+        - cpc
+        player-input:
+        - "town set embassytax %cp-player-input%"
+        - delay= 5 open= towny-town-bank
       '13':
         material: GOLD_INGOT
         stack: 1
@@ -170,3 +218,16 @@ panels:
         name: Back to Town Menu
         commands:
         - open= towny-town
+      '53':
+        material: RESPAWN_ANCHOR
+        stack: 1
+        name: Set Spawn Cost
+        lore:
+        - Change how much it costs
+        - to spawn to your town.
+        commands:
+        - "msg= How much would you like to charge others to spawn in your town?"
+        - cpc
+        player-input:
+        - "town set spawncost %cp-player-input%"
+        - delay= 5 open= towny-town-bank

@@ -13,101 +13,221 @@ panels:
         stack: 1
         name: Rename Nation
         commands:
-        - "msg= What would you like to name your nation?"
-        - "cpc"
+        - msg= What would you like to name your nation?
+        - cpc
         player-input:
-        - "nation set name %cp-player-input%"
+        - nation set name %cp-player-input%
+        - delay= 5 open= towny-nation-king
       '1':
         material: NAME_TAG
         stack: 1
         name: Set Nation Tag
+        lore:
+        - Click to enter a four character
+        - tag for your nation.
+        - ''
+        - 'Right Click:'
+        - Remove current tag.
         commands:
-        - "msg= What tag would you like to give your nation?"
-        - "cpc"
+        - msg= What tag would you like to give your nation?
+        - cpc
         player-input:
-        - "nation set tag %cp-player-input%"
-      '3':
-        material: PLAYER_HEAD
-        stack: 1
-        name: Kick Town
-        commands:
-        - "msg= Which town would you like to kick?"
-        - "cpc"
-        player-input:
-        - "nation kick %cp-player-input%"
-      '4':
-        material: PURPLE_BANNER
-        banner: []
-        stack: 1
-        name: Ally Settings
-        #commands:
-        #- open= nation-ally-menu
-      '5':
-        material: PLAYER_HEAD
-        stack: 1
-        name: Add Town
-        commands:
-        - "msg= Which town would you like to add?"
-        - "cpc"
-        player-input:
-        - "nation add %cp-player-input%"
-      '7':
-        material: PIGLIN_BANNER_PATTERN
-        stack: 1
-        name: Invites
-      '8':
-        material: PIGLIN_BANNER_PATTERN
-        stack: 1
-        name: List Worlds
-      '21':
-        material: GOLD_INGOT
-        stack: 1
-        name: Set Nation Tax
-      '23':
-        material: KELP
-        stack: 1
-        name: Neutrality
-      '25':
-        material: PLAYER_HEAD
-        stack: 1
-        name: Set Player Title
-      '26':
-        material: PLAYER_HEAD
-        stack: 1
-        name: Set Player Surname
-      '34':
-        material: PLAYER_HEAD
-        stack: 1
-        name: Remove Nation Rank from Player
-      '35':
-        material: PLAYER_HEAD
-        stack: 1
-        name: Add Nation Rank to Player
+        - left= nation set tag %cp-player-input%
+        - right= nation set tag clear
+        - delay= 5 open= towny-nation-king
       '45':
         material: BARRIER
         stack: 1
         name: Back to Nation Menu
         commands:
         - open= towny-nation
-      '47':
-        material: PLAYER_HEAD
-        stack: 1
-        name: Remove Enemy
-      '48':
-        material: PLAYER_HEAD
-        stack: 1
-        name: Add Enemy
-      '50':
-        material: PLAYER_HEAD
-        stack: 1
-        name: Change Nation Leader
-      '51':
-        material: PLAYER_HEAD
-        stack: 1
-        name: Change Nation Capitol
       '53':
         material: COMPOSTER
         stack: 1
         name: Delete Nation
+        lore:
+        - '!!!WARNING!!!'
+        - 'Shift+Right Click:'
+        - Deletes your nation.
         commands:
-        - nation delete
+        - rightshift= nation delete
+      '51':
+        material: PURPLE_BANNER
+        banner: []
+        name: Ally Settings
+        stack: 1
+        commands:
+        - open= towny-nation-ally
+      '23':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2UxYjM0NjI0OWFlZjY1NWY4MWE4YmQ1OGNjNGIzNWYxMzlkMWU4NmI2MjE3YjExYjhlOTgxNDQ1Y2I1MTE4ZCJ9fX0=
+        stack: 1
+        name: Change Nation Leader
+        commands:
+        - msg= Who do you want to crown as king of this nation?
+        - cpc
+        player-input:
+        - nation set king %cp-player-input%
+        - delay= 5 open= towny-nation
+      '2':
+        material: NAME_TAG
+        stack: 1
+        name: Set Nation Board
+        commands:
+        - msg= What would you like the board to say?
+        - cpc
+        player-input:
+        - nation set board %cp-player-input%
+        - delay= 5 open= towny-nation
+      '3':
+        material: NAME_TAG
+        stack: 1
+        name: Broadcast to Nation
+        commands:
+        - msg= What would you like to tell your nation?
+        - cpc
+        player-input:
+        - nation say %cp-player-input%
+      '7':
+        material: NAME_TAG
+        stack: 1
+        name: Set Player Title
+        lore:
+        - Click then enter a player
+        - name, a space, then a
+        - title to give them.
+        commands:
+        - msg= Enter a player name followed by the title you want them to have.
+        - cpc
+        player-input:
+        - nation set title %cp-player-input%
+        - delay=5 open= towny-nation-king
+      '8':
+        material: NAME_TAG
+        stack: 1
+        name: Set Player Surname
+        lore:
+        - Click then enter a player
+        - name, a space, then a
+        - surname to give them.
+        commands:
+        - msg= Enter a player name followed by the surname you want them to have.
+        - cpc
+        player-input:
+        - nation set surname %cp-player-input%
+        - delay=5 open= towny-nation-king
+      '17':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2QyNWU0NjcxOWY5NjdiMzNjMjk3ZWQxNGE1MWJlOTRlZDY0YmJlZDM2MmFhYzkxYzc5ZjM5MDNlMWVhNDkxIn19fQ==
+        stack: 1
+        name: Add Nation Rank to Player
+        commands:
+        - msg= Enter a player name followed by the rank you wish to give them.
+        - cpc
+        player-input:
+        - nation rank add %cp-player-input%
+        - delay=5 open= towny-nation-king
+      '16':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzczYTExNTI4MzAyZjI1NDJkMTk2N2JmYzY3ZGFiM2FmNWQ1ZjFmNzZjMzYwZWI2N2I3MWIyYWU0YzNmN2IifX19
+        stack: 1
+        name: Remove Nation Rank from Player
+        commands:
+        - msg= Enter a player name followed by the rank you wish to remove from them.
+        - cpc
+        player-input:
+        - nation rank remove %cp-player-input%
+        - delay=5 open= towny-nation-king
+      '5':
+        material: OAK_DOOR
+        stack: 1
+        name: Nation Open Status
+        lore:
+        - This will toggle between
+        - open to any town to join
+        - and closed invitation.
+        commands:
+        - nation toggle open
+      '49':
+        material: FERN
+        stack: 1
+        name: Merge Nations
+        commands:
+        - msg= Which nation should bend the knee?
+        - cpc
+        player-input:
+        - nation merge %cp-player-input%
+        - delay= 5 open= towny-nation-king
+      '47':
+        material: RED_CANDLE
+        name: Toggle Nuetrality
+        lore:
+        - Your nation is not at peace.
+        commands:
+        - nation toggle neutral
+        hasvalue:
+          compare: '%townyadvanced_is_nation_peaceful%'
+          value: (Peaceful)
+          material: WHITE_CANDLE
+          stack: 1
+          name: Toggle Neutrality
+          lore:
+          - Your nation is at peace.
+          commands:
+          - nation toggle neutral
+        stack: 1
+      '21':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjQ1NTlkNzU0NjRiMmU0MGE1MThlNGRlOGU2Y2YzMDg1ZjBhM2NhMGIxYjcwMTI2MTRjNGNkOTZmZWQ2MDM3OCJ9fX0=
+        stack: 1
+        name: Change Nation Capital
+        commands:
+        - msg= What town do you want to chang the capital to?
+        - cpc
+        player-input:
+        - nation set capital %cp-player-input%
+      '32':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmMxYmQ3Y2UyZDUyN2VjNmY3NmI4ZTgxZjE5ZDY5ZDFiOWZmNGQ1YjZjZDZjYzc2NGVlZDE5NDVhNmM2YyJ9fX0=
+        name: Add Town
+        commands:
+        - msg= Which town would you like to invite to join your nation?
+        - cpc
+        player-input:
+        - nation add %cp-player-input%
+        - delay= 5 open= towny-nation-king
+        stack: 1
+      '30':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzU0NjVmNzdlN2ZkNDIxNzM4NDk5OGMzMzg1OWFkOTYzNmUxODkzYmVlNDA1ZGQyNTE5NDIzYjUxNzY3In19fQ==
+        stack: 1
+        name: Kick Town
+        commands:
+        - msg= Which town would you like to kick?
+        - cpc
+        player-input:
+        - nation kick %cp-player-input%
+        - delay= 5 open= towny-nation-king
+      '31':
+        material: MAP
+        stack: 1
+        name: Invites Received
+        commands:
+        - nation ally received
+      '28':
+        material: COMPASS
+        stack: 1
+        name: Set Nation Spawn
+        lore:
+        - Sets the nation spawn to
+        - where you are standing.
+        commands:
+        - nation set spawn
+      '34':
+        material: MAP
+        name: Set Map Color
+        lore:
+        - Change the color of the
+        - nation as it would appear
+        - on the dynmap.
+        commands:
+        - msg= What color would you like to set this to?
+        - cpc
+        player-input:
+        - nation set mapcolor %cp-player-input%
+        - delay=5 open= towny-nation-king
+        stack: 1

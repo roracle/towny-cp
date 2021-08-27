@@ -8,26 +8,52 @@ panels:
     - open= towny-quick {Middle}
     - open= towny-hotbar {Bottom}
     item:
-      '11':
+      '3':
+        material: PAPER
+        name: List Outposts
+        lore:
+        - Get a list of your outposts.
+        commands:
+        - town outpost list
+      '5':
+        material:
+        name: Change Outpost Spawn
+        lore:
+        - You must be in an outpost
+        - plot in order to change
+        - its spawn point.
+        commands:
+        - town set outpost
+      '20':
         material: MOSSY_COBBLESTONE
         stack: 1
         name: Outpost 1
-      '13':
+        commands:
+        - town outpost 1
+      '22':
         material: MOSSY_COBBLESTONE
         stack: 1
         name: Outpost 2
-      '15':
+        commands:
+        - town outpost 2
+      '24':
         material: MOSSY_COBBLESTONE
         stack: 1
         name: Outpost 3
-      '30':
+        commands:
+        - town outpost 3
+      '39':
         material: MOSSY_COBBLESTONE
         stack: 1
         name: Outpost 4
-      '32':
+        commands:
+        - town outpost 1
+      '41':
         material: MOSSY_COBBLESTONE
         stack: 1
         name: Outpost 5
+        commands:
+        - town outpost 1
       '45':
         material: BARRIER
         stack: 1

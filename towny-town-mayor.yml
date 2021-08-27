@@ -19,16 +19,21 @@ panels:
         - cpc
         player-input:
         - town set name %cp-player-input%
-      '2':
+        - delay=5 open=towny-town-mayor
+      '1':
         material: NAME_TAG
         stack: 1
         name: Set Town Tag
+        lore:
+        - To clear a tag, do
+        - /town set tag clear
         commands:
         - msg= What would you like to name your town?
         - cpc
         player-input:
         - t new %cp-player-input%
-      '4':
+        - delay=5 open=towny-town-mayor
+      '2':
         material: NAME_TAG
         stack: 1
         name: Set Town Board
@@ -37,7 +42,47 @@ panels:
         - cpc
         player-input:
         - town set board %cp-player-input%
+        - delay=5 open=towny-town-mayor
+      '4':
+        material: WRITABLE_BOOK
+        stack: 1
+        name: Broadcast Message
+        lore:
+        - Sends a message to all
+        - residents in your town.
+        commands:
+        - "msg= What message would you like to broadcast to your residents?"
+        - cpc
+        player-input:
+        - "town say %cp-player-input%"
+        - delay= 5 open= towny-town-mayor
       '6':
+        material: NAME_TAG
+        stack: 1
+        name: Change Dynmap Color
+        lore:
+        - "If you are using dynmap,"
+        - "you can set the following"
+        - "colors for your town:"
+        - "aqua, azure, beige, black,"
+        - "blue, brown, cyan, darkblue,"
+        - "darkcyan, darkgrey, darkgreen,"
+        - "darkkhaki, darkmagenta,"
+        - "darkolivegreen, darkorange,"
+        - "darkorchid, darkred, darksalmon,"
+        - "darkviolet, fuchsia, gold, green,"
+        - "indigo, khaki, lightblue, lightcyan,"
+        - "lightgreen, lightgrey, lightpink,"
+        - "lightyellow, lime, magenta, maroon,"
+        - "navy, olive, orange, pink, purple,"
+        - "violet, red, silver, white, yellow"
+        commands:
+        - "msg= What color would you like dynmap to use for your town?"
+        - cpc
+        player-input:
+        - "town set mapcolor %cp-player-input%"
+        - delay= 5 open= towny-town-mayor
+      '7':
         material: NAME_TAG
         stack: 1
         name: Set Title For A Resident
@@ -49,6 +94,7 @@ panels:
         - cpc
         player-input:
         - town set title %cp-player-input%
+        - delay=5 open=towny-town-mayor
       '8':
         material: NAME_TAG
         stack: 1
@@ -61,6 +107,7 @@ panels:
         - cpc
         player-input:
         - town set surname %cp-player-input%
+        - delay=5 open=towny-town-mayor
       '18':
         material: GOLDEN_SWORD
         stack: 1
@@ -90,8 +137,10 @@ panels:
         commands:
         - "msg= Which nation's invite do you wish to decline?"
         - "cpc"
+        - delay=5 open=towny-town-mayor
         player-input:
         - "town invite deny %cp-player-input%"
+        - delay=5 open=towny-town-mayor
       '22':
         material: PAPER
         name: Received Invites
@@ -110,14 +159,27 @@ panels:
         - "cpc"
         player-input:
         - "town invite accept %cp-player-input%"
+        - delay=5 open=towny-town-mayor
       '25':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzU0MzA1ODEzODI4MzIzY2FiMmVkYTQ4ZjY5MmIxMTI1NTZkODlkNGJjZWRkYTg0YjVjMmZlMzYxMWFiOCJ9fX0
         name: Kick Resident
         stack: 1
+        commands:
+        - "Which resident do you wish to kick from your town? (can be multiple, separated by a space)"
+        - cpc
+        player-input:
+        - "town kick %cp-player-input%"
+        - delay= 5 open= towny-town-mayor
       '26':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
         name: Add Resident
         stack: 1
+        commands:
+        - "Which resident do you wish to add to your town? (can be multiple, separated by a space)"
+        - cpc
+        player-input:
+        - "town add %cp-player-input%"
+        - delay= 5 open= towny-town-mayor
       '27':
         material: CREEPER_HEAD
         stack: 1
@@ -139,6 +201,28 @@ panels:
         - left= town toggle explosion on
         - right= town toggle explosion off
       '30':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzU0MzA1ODEzODI4MzIzY2FiMmVkYTQ4ZjY5MmIxMTI1NTZkODlkNGJjZWRkYTg0YjVjMmZlMzYxMWFiOCJ9fX0=
+        name: Remove Trusted Player
+        lore:
+        - Remove a player you have trusted.
+        commands:
+        - "msg= Who would you like to remove from the trust list?"
+        - "cpc"
+        player-input:
+        - "town trust add %cp-player-input"
+        - delay= 5 open= towny-town-mayor
+      '32':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWZmMzE0MzFkNjQ1ODdmZjZlZjk4YzA2NzU4MTA2ODFmOGMxM2JmOTZmNTFkOWNiMDdlZDc4NTJiMmZmZDEifX19
+        name: Add Trusted Player
+        lore:
+        - Add a trusted player to your town.
+        commands:
+        - "msg= Who would you like to add to the trust list?"
+        - "cpc"
+        player-input:
+        - "town trust remove %cp-player-input"
+        - delay= 5 open= towny-town-mayor
+      '12':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzZlNjliMWM3ZTY5YmNkNDllZDk3NGY1YWMzNmVhMjc1ZWZhYmI4YzY0OWNiMmIxZmU5ZDZlYTYxNjZlYzMifX19
         name: Payer Invites (Sent)
         lore:
@@ -146,7 +230,20 @@ panels:
         - 'players to join your town.'
         commands:
         - town invite sent
-      '32':
+      '13':
+        material: BARRIER
+        name: Purge Inactive
+        lore:
+        - Enter a number of days of
+        - inactivity and those players
+        - will be removed from the town.
+        commands:
+        - "msg= Players will be purged if they've been inactive for how many days?"
+        - cpc
+        player-input:
+        - "town purge %cp-player-input%"
+        - open= towny-town-mayor
+      '14':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGQ4YjcxNzNkODQxZjI1NjNlYzEwODg4OGIwZjc5NzkxN2VmYzE4YmUyNzg2MWYwYTY3NjFhYTNlZDkxY2UifX19
         name: Invite a Player
         lore:
@@ -157,6 +254,7 @@ panels:
         - "cpc"
         player-input:
         - "town invite %cp-player-input%"
+        - delay=5 open=towny-town-mayor
       '34':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzczYTExNTI4MzAyZjI1NDJkMTk2N2JmYzY3ZGFiM2FmNWQ1ZjFmNzZjMzYwZWI2N2I3MWIyYWU0YzNmN2IifX19
         stack: 1
@@ -175,6 +273,7 @@ panels:
         - cpc
         player-input:
         - town rank remove %cp-player-input%
+        - delay=5 open=towny-town-mayor
       '35':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2QyNWU0NjcxOWY5NjdiMzNjMjk3ZWQxNGE1MWJlOTRlZDY0YmJlZDM2MmFhYzkxYzc5ZjM5MDNlMWVhNDkxIn19fQ==
         stack: 1
@@ -193,6 +292,7 @@ panels:
         - cpc
         player-input:
         - town rank add %cp-player-input%
+        - delay=5 open=towny-town-mayor
       '45':
         material: BARRIER
         stack: 1
@@ -218,6 +318,7 @@ panels:
         - cpc
         player-input:
         - town set mayor %cp-player-input%
+        - delay=5 open=towny-town
       '51':
         material: NETHER_STAR
         stack: 1
@@ -239,3 +340,5 @@ panels:
         commands:
         - right= town delete
         - sudo= confirm
+        - plot perm hud
+        - delay= 5 open= towny-notown

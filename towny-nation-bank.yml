@@ -15,89 +15,140 @@ panels:
         lore:
         - 'Current balance:'
         - '%townyadvanced_nation_balance%'
-      '12':
-        material: RED_STAINED_GLASS_PANE
-        stack: 1
-        name: Withdraw 1
-        commands:
-        - nation withdraw 1
       '13':
-        material: GOLD_BLOCK
+        material: GOLD_INGOT
         stack: 1
         name: ''
-      '14':
-        material: LIME_STAINED_GLASS_PANE
-        stack: 1
-        name: Deposit 1
-        commands:
-        - nation deposit 1
-      '21':
-        material: RED_STAINED_GLASS_PANE
-        stack: 1
-        name: Withdraw 8
-        commands:
-        - nation withdraw 8
+        lore:
+        - 'You are not allowed'
+        - 'to deposit or withdraw.'
+        hasperm:
+          perm: towny.command.nation.deposit
+          material: GOLD_INGOT
+          stack: 1
+          name: Deposit/Withdraw 1
+          lore:
+          - 'Left Click:'
+          - 'Deposit'
+          - ''
+          - 'Right Click:'
+          - 'Withdraw'
+          commands:
+          - left= nation deposit 1
+          - right= nation withdraw 1
       '22':
-        material: GOLD_BLOCK
+        material: GOLD_INGOT
         stack: 8
-        name: ''
-      '23':
-        material: LIME_STAINED_GLASS_PANE
-        stack: 1
-        name: Deposit 8
-        commands:
-        - nation deposit 8
-      '30':
-        material: RED_STAINED_GLASS_PANE
-        stack: 1
-        name: Withdraw 16
-        commands:
-        - nation withdraw 16
+        name: 'Deposit/Withdraw 8'
+        lore:
+        - 'You are not allowed'
+        - 'to deposit or withdraw.'
+        hasperm:
+          perm: towny.command.nation.deposit
+          material: GOLD_INGOT
+          stack: 8
+          name: Deposit/Withdraw 8
+          lore:
+          - 'Left Click:'
+          - 'Deposit'
+          - ''
+          - 'Right Click:'
+          - 'Withdraw'
+          commands:
+          - left= nation deposit 8towny.command.nation.deposit
+          - right= nation withdraw 8
       '31':
-        material: GOLD_BLOCK
+        material: GOLD_INGOT
         stack: 16
-        name: ''
-      '32':
-        material: LIME_STAINED_GLASS_PANE
-        stack: 1
-        name: Deposit 16
-        commands:
-        - nation deposit 16
-      '39':
-        material: RED_STAINED_GLASS_PANE
-        stack: 1
-        name: Withdraw 32
-        commands:
-        - nation withdraw 32
+        name: 'Deposit/Withdraw 16'
+        lore:
+        - 'You are not allowed'
+        - 'to deposit or withdraw.'
+        hasperm:
+          perm: towny.command.nation.deposit
+          material: GOLD_INGOT
+          stack: 16
+          name: Deposit/Withdraw 16
+          lore:
+          - 'Left Click:'
+          - 'Deposit'
+          - ''
+          - 'Right Click:'
+          - 'Withdraw'
+          commands:
+          - left= nation deposit 16
+          - right= nation withdraw 16
       '40':
-        material: GOLD_BLOCK
+        material: GOLD_INGOT
         stack: 32
-        name: ''
-      '41':
-        material: LIME_STAINED_GLASS_PANE
+        name: 'Deposit/Withdraw 32'
+        lore:
+        - 'You are not allowed'
+        - 'to deposit or withdraw.'
+        hasperm:
+          perm: towny.command.nation.deposit
+          material: GOLD_INGOT
+          stack: 32
+          name: Deposit/Withdraw 32
+          lore:
+          - 'Left Click:'
+          - 'Deposit'
+          - ''
+          - 'Right Click:'
+          - 'Withdraw'
+          commands:
+          - left= nation deposit 32
+          - right= nation withdraw 32
+      '49':
+        material: GOLD_INGOT
+        stack: 64
+        name: 'Deposit/Withdraw 64'
+        lore:
+        - 'You are not allowed'
+        - 'to deposit or withdraw.'
+        hasperm:
+          perm: towny.command.nation.deposit
+          material: GOLD_INGOT
+          stack: 64
+          name: Deposit/Withdraw 64
+          lore:
+          - 'Left Click:'
+          - 'Deposit'
+          - ''
+          - 'Right Click:'
+          - 'Withdraw'
+          commands:
+          - left= nation deposit 64
+          - right= nation withdraw 64
+      '0':
+        material: WRITABLE_BOOK
         stack: 1
-        name: Deposit 32
+        name: Bank History
         commands:
-        - nation deposit 32
+        - nation bankhistory
+      '8':
+        material: GOLD_INGOT
+        stack: 1
+        name: Set Taxes
+        commands:
+        - "msg= What would you like to set the tax rate to?"
+        - cpc
+        player-input:
+        - "nation set taxes %cp-player-input%"
+        - delay= 5 open= towny-nation-bank
+      '53':
+        material: RESPAWN_ANCHOR
+        stack: 1
+        name: Set Spawn Cost
+        commands:
+        - "msg= What would you like to set the spawn cost to?"
+        - cpc
+        player-input:
+        - "nation set taxes %cp-player-input%"
+        - delay= 5 open= towny-nation-bank
       '45':
         material: BARRIER
         stack: 1
         name: Back to Nation Menu
         commands:
         - open= towny-nation
-      '48':
-        material: RED_STAINED_GLASS_PANE
-        stack: 1
-        name: Withdraw 64
-        commands:
-        - nation withdraw 64
-      '49':
-        material: GOLD_BLOCK
-        stack: 64
-        name: ''
-      '50':
-        material: LIME_STAINED_GLASS_PANE
-        stack: 1
-        name: Deposit 64
-        commands:
-        - nation deposit 64

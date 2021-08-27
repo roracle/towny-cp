@@ -50,6 +50,9 @@ panels:
             stack: 1
             name: Sell Plot (Mayor)
             lore:
+            - "Use this to sell more plots:"
+            - "/plot forsale circle #"
+            - "/plot forsale rect #"
             - "Note: this will be more"
             - "dynamic in the future."
             commands:
@@ -118,8 +121,11 @@ panels:
           stack: 1
           name: Take Plot Off Market
           lore:
-          - "Note: this will be more"
-          - "dynamic in the future."
+          - "To take plot around you off the market, do"
+          - "/plot notforsale circle #"
+          - "/plot norforsale rect #"
+          - ''
+          - "This will be more dynamic in the future."
           commands:
           - plot notforsale
         hasvalue0:
@@ -129,10 +135,13 @@ panels:
             perm: towny.command.town.mayor
             material: ACACIA_SIGN
             stack: 1
-            name: Take Plot Off Market (Mayor)
+            name: "Take Plot Off Market (Mayor)"
             lore:
-            - "Note: this will be more"
-            - "dynamic in the future."
+            - "To take plots around you off the market, do"
+            - "/plot notforsale circle #"
+            - "/plot norforsale rect #"
+            - ""
+            - "This will be more dynamic in the future."
             commands:
             - plot notforsale
       '21':
@@ -233,6 +242,12 @@ panels:
           material: RED_BANNER
           banner: []
           name: Unclaim Plot
+          lore:
+          - To unclaim plots around you, do
+          - "/plot unclaim circle #"
+          - "/plot unclaim rect #"
+          - ''
+          - This will be more dynamic in the future.
           commands:
           - plot unclaim
         hasvalue0:
@@ -241,6 +256,12 @@ panels:
           material: LIME_BANNER
           banner: []
           name: Purchase Plot
+          lore:
+          - To claim plots around you, do
+          - /plot claim auto
+          - ''
+          - This will be more dynamic in the future
+          - to do this from this panel.
           commands:
           - plot claim
       '29':

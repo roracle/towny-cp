@@ -90,12 +90,15 @@ panels:
       '24':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmZiM2EwZTVkZWE5MTVhMjI0Zjg2YzUyOGQ0MTRlYzBmMWRiNmY0N2NkYjk3MTg3NzVhZDNhOTM0MThmZTI0In19fQ==
         stack: 1
-        name: This Town
+        name: Towns
         lore:
         - 'Shows info about the town you'
         - 'are standing in via chatbox.'
+        - ''
+        - 'To see info on a specific town:'
+        - '/town townname'
         commands:
-        - town here
+        - left= town here
       '37':
         material: COMPASS
         stack: 1
@@ -147,6 +150,23 @@ panels:
           - '%townyadvanced_nation%'
           commands:
           - nation spawn
+      '45':
+        material: RAW_IRON
+        stack: 1
+        name: No Taxes
+        lore:
+        - You are a nomad and do not pay
+        - taxes to any town.
+        hasvalue:
+          compare: "%townyadvanced_has_town%"
+          value: true
+          material: RAW_GOLD
+          stack: 1
+          name: My Taxes
+          lore:
+          - Click to see your tax rate.
+          commands:
+          - resident tax
       '49':
         material: BLACK_STAINED_GLASS_PANE
         stack: 1
@@ -211,9 +231,15 @@ panels:
               commands:
               - nation leave
       '53':
-        material: COMMAND_BLOCK
+        material: BLACK_STAINED_GLASS_PANE
         stack: 1
-        name: Resident Permissions
-        commands:
-        - open= towny-resident-perms
-        - plot perm hud
+        name: ''
+        hasvalue:
+          compare: '%townyadvanced_has_town%'
+          value: true
+          material: COMMAND_BLOCK
+          stack: 1
+          name: Resident Permissions
+          commands:
+          - open= towny-resident-perms
+          - plot perm hud

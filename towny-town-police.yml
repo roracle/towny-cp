@@ -1,0 +1,127 @@
+panels:
+  towny-town-police:
+    perm: default
+    rows: 6
+    title: '&8Towny - Police Station'
+    empty: BLACK_STAINED_GLASS_PANE
+    commands-on-open:
+    - open= towny-quick {Middle}
+    - open= towny-hotbar {Bottom}
+    item:
+      '3':
+        material: SPAWNER
+        stack: 1
+        name: Make Town Jail
+        lore:
+        - 'This will make the current'
+        - 'plot you are in the primary'
+        - 'town jail. This is good for'
+        - 'a holding cell before sorting'
+        - 'into personal cells.'
+        commands:
+        - town set primaryjail
+      '4':
+        material: RESPAWN_ANCHOR
+        stack: 1
+        name: Change Jail Spawn
+        lore:
+        - Change the jail spawn of
+        - the jail you are currently
+        - standing in.
+        commands:
+        - town set jail
+      '5':
+        material: IRON_BARS
+        stack: 1
+        name: Make Jail Cell
+        lore:
+        - 'Make the block you are'
+        - 'standing on a jail cell.'
+        - 'You may make many cells'
+        - 'to sort inmate population.'
+        - ''
+        - 'Left click: add cell'
+        - 'Right click: remove cell'
+        commands:
+        - plot jailcell add
+      '20':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Release Resident
+        lore:
+        - 'You will be asked to'
+        - 'input the name of the'
+        - 'prisoner to release.'
+        commands:
+        - "msg= Who is the prisoner you want to release?"
+        - "cpc"
+        player-input:
+        - "town unjail %cp-player-input%"
+      '22':
+        material: PAPER
+        stack: 1
+        name: Jail List
+        lore:
+        - 'Shows jail number, name,'
+        - 'coords, cellcount, and'
+        - 'which jail is primary.'
+        commands:
+        - town jail list
+      '24':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzc3NjA4ZWY2YmVhYWUwMjhhOGQxMDBjMzE5ZWQ2ZTg5YzFkMWUyNzkwYmI1ZjNhYzcyZjBhYTZhYzJjNWQ4NSJ9fX0=
+        stack: 1
+        name: Arrest Resident
+        lore:
+        - 'You will be asked to'
+        - 'input the name of the'
+        - 'player to arrest.'
+        - ''
+        - 'You can format it this'
+        - 'way to get specific:'
+        - 'name hours jail cell'
+        commands:
+        - "msg= Who will you be arresting? You may add up to three specifications"
+        - "cpc"
+        player-input:
+        - "town jail %cp-player-input%"
+      '38':
+        material: PLAYER_HEAD
+        stack: 1
+        name: Unmark as Outlaw
+        lore:
+        - 'Remove player from'
+        - 'the wanted list.'
+        commands:
+        - "msg= Who would you like to remove from the wanted list?"
+        - "cpc"
+        player-input:
+        - "town outlaw remove %cp-player-input%"
+      '40':
+        material: PAPER
+        stack: 1
+        name: Wanted List
+        lore:
+        - 'View the wanted list'
+        - ''
+        - "To see another town's list:"
+        - '/town outlawlist townname'
+        commands:
+        - left= town outlawlist
+      '42':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGQ2ZmU0NDcwMzBkZWFjMmVhNjdkYmJlNGZmNzg2MWIyODNiMmZhMmQxNzZkNGM1M2ZiMThhZTQ4MjhkM2VlNCJ9fX0=
+        stack: 1
+        name: Mark as Outlaw
+        lore:
+        - 'Add someone to the'
+        - 'town wanted list.'
+        commands:
+        - "msg= Who would you like to put on the wanted list?"
+        - "cpc"
+        player-input:
+        - "town outlaw remove %cp-player-input%"
+      '45':
+        material: BARRIER
+        stack: 1
+        name: Back to Town Menu
+        commands:
+        - open= towny-town

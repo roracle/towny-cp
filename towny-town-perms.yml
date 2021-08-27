@@ -10,6 +10,19 @@ panels:
     - plot perm hud
     empty: BLACK_STAINED_GLASS_PANE
     item:
+      '2':
+        material: BARRIER
+        stack: 1
+        name: Reset ALL Plots
+        lore:
+        - "!!!WARNING!!!"
+        - Resets every plot to town
+        - defaults, regardless of
+        - if the plot is customized.
+        - ''
+        - 'Shift+Right Click to use.'
+        commands:
+        - rightshift= town set perm reset
       '3':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzZmNjlmN2I3NTM4YjQxZGMzNDM5ZjM2NThhYmJkNTlmYWNjYTM2NmYxOTBiY2YxZDZkMGEwMjZjOGY5NiJ9fX0
         stack: 1

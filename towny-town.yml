@@ -19,25 +19,29 @@ panels:
       '2':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDYzOThkYzZmNGRiNDEwMjRkMTVmYzQyYTYyODZkZjM2MTc5Y2M4YzM1NjhjYTY2Y2FiZDYxM2JkYjc0NiJ9fX0=
         stack: 1
-        name: Mayor
+        name: Mayor's Office
         lore:
         - '%townyadvanced_town_mayor%'
         - ''
-        - "Click to access the mayor's"
-        - 'office for town settings.'
+        - Click to access town settings.
         commands:
         - open= towny-town-mayor {Top}
         - plot perm hud
-      '4':
+      '6':
         material: PLAYER_HEAD
         stack: 1
         name: Resident List
         lore:
-        - Click to see list of residents.
+        - 'Left Click:'
+        - List of residents.
+        - ''
+        - 'Right Click:'
+        - Resident Rank List
         commands:
-        - town reslist
-      '6':
-        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWU0ODYxNWRmNmI3ZGRmM2FkNDk1MDQxODc2ZDkxNjliZGM5ODNhM2ZhNjlhMmFjYTEwN2U4ZjI1MWY3Njg3In19fQ==
+        - left= town reslist
+        - right= town ranklist
+      '8':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODU0ODRmNGI2MzY3Yjk1YmIxNjI4ODM5OGYxYzhkZDZjNjFkZTk4OGYzYTgzNTZkNGMzYWU3M2VhMzhhNDIifX19
         stack: 1
         name: Online Players
         lore:
@@ -45,12 +49,6 @@ panels:
         - '%townyadvanced_town_residents_online%'
         commands:
         - town online
-      '8':
-        material: PAPER
-        stack: 1
-        name: Towns Lists
-        commands:
-        - open= towny-town-townlists {Top}
       '19':
         material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWI4ZmUxYzQ0YWNiZWViOTE4ZDM4YmM0MmQ1NTBiZWRkNWMzZGQwNDk4ODlmZDllZWVhMTE2MGFiOGI2YSJ9fX0=
         stack: 1
@@ -61,16 +59,16 @@ panels:
           stack: 1
           name: Town Bank
           lore:
-          - 'Click to access town coffer.'
+          - Click to access town coffer.
           commands:
           - open= towny-town-bank {Top}
-        hasperm:
+        hasperm0:
           perm: towny.command.town.deposit
           material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWI4ZmUxYzQ0YWNiZWViOTE4ZDM4YmM0MmQ1NTBiZWRkNWMzZGQwNDk4ODlmZDllZWVhMTE2MGFiOGI2YSJ9fX0=
           stack: 1
           name: Town Bank
           lore:
-          - 'Click to access town coffer.'
+          - Click to access town coffer.
           commands:
           - open= towny-town-bank {Top}
       '21':
@@ -91,24 +89,18 @@ panels:
         name: Town Upkeep
         lore:
         - '%townyadvanced_daily_town_upkeep%'
-      '37':
-        material: DAYLIGHT_DETECTOR
-        stack: 1
-        name: Town Size
-        lore:
-        - '%townyadvanced_town_townblocks_used%/%townyadvanced_town_townblocks_maximum%'
-      '39':
-        material: COMPASS
-        stack: 1
-        name: 'Town Spawn'
-        commands:
-        - town spawn
       '45':
         material: BARRIER
         stack: 1
         name: Back to Resident Menu
         commands:
         - open= towny-resident
+      '49':
+        material: MAP
+        stack: 1
+        name: Towns Lists Menu
+        commands:
+        - open= towny-town-townlists {Top}
       '53':
         material: COMMAND_BLOCK
         stack: 1
@@ -116,16 +108,79 @@ panels:
         lore:
         - 'Notes:'
         - ''
-        - 'Town permissions WILL NOT'
-        - 'override plot permissions'
-        - 'for a plot that has been'
-        - 'set by a resident or yourself.'
+        - Town permissions WILL NOT
+        - override plot permissions
+        - for a plot that has been
+        - set by a resident or yourself.
         - ''
-        - 'If a plot has a different'
-        - 'permission than you want,'
-        - 'you will need to go to the'
-        - 'plot and use plot permissions'
-        - 'to change them separately.'
+        - If a plot has a different
+        - permission than you want,
+        - you will need to go to the
+        - plot and use plot permissions
+        - to change them separately.
         commands:
         - open= towny-town-perms
         - plot perm hud
+      '47':
+        material: COMPASS
+        stack: 1
+        name: Town Spawn
+        commands:
+        - town spawn
+      '51':
+        material: COMPASS
+        stack: 1
+        name: Town Spawn (other towns)
+        lore:
+        - Spawn to a different town.
+        commands:
+        - msg= What town do you want to spawn in?
+        - cpc
+        player-input:
+        - town spawn %cp-player-input%
+        - open= towny-town
+      '3':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjcxNTdjZmZiMDYwNjNiMzUyZGM2ODQ3OGY0NzZlN2QyMDJjM2JhNmU3Y2JmMjk3MjQxYmU4MTY4MTA3NGJmIn19fQ
+        stack: 1
+        name: Police Station
+        lore:
+        - Click to access town police station.
+        commands:
+        - open= towny-town-police {Top}
+      '5':
+        material: PAPER
+        stack: 1
+        name: Rank List
+        lore:
+        - See town members and their
+        - ranks in the chatbox.
+        commands:
+        - town ranklist
+      '40':
+        material: DAYLIGHT_DETECTOR
+        stack: 1
+        name: Town Size
+        lore:
+        - '%townyadvanced_town_townblocks_used%/%townyadvanced_town_townblocks_maximum%'
+      '38':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        name: Plot Info
+        lore:
+        - Show plots this town
+        - has claimed in chat box.
+        commands:
+        - town plots
+        stack: 1
+      '42':
+        material: cps= eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWVjNjkyNzhmMzNiOGZjZTJhYmIzNjJkOTA4ZDYwYWNhNWQ1N2M2NWY5NGUwZDY2YWFmMDYwODhiZDcyMDdiYyJ9fX0=
+        stack: 1
+        name: Plot Info (other towns)
+        lore:
+        - Show plots another town
+        - has claimed in chat box.
+        commands:
+        - msg= What town do you want plot info about?
+        - cpc
+        player-input:
+        - town plots %cp-player-input%
+        - open= towny-town
